@@ -1,0 +1,7 @@
+.DS_Store
+My_achievements_2025.txt
+My_LinkedIn_Profile.txt
+*.swp
+*.swo
+.vscode/
+.cursor/

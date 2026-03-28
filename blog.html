@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Lucas Linkowski</title>
+    <meta name="description" content="Technical writing on malware analysis, reverse engineering, detection engineering, and GenAI in cybersecurity by Lucas Linkowski.">
+    <meta property="og:title" content="Blog | Lucas Linkowski">
+    <meta property="og:description" content="Technical writing on malware analysis, reverse engineering, detection engineering, and GenAI in cybersecurity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucaslinkowski.com/blog.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#expertise">Expertise</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 6rem;">
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Blog</h1>
+                <p class="section-subtitle">Technical analysis, threat research, reflections, and thoughts on the evolving cybersecurity landscape.</p>
+
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="genai">GenAI</button>
+                    <button class="filter-btn" data-filter="threat">Threat Research</button>
+                    <button class="filter-btn" data-filter="detection">Detection</button>
+                    <button class="filter-btn" data-filter="reflections">Reflections</button>
+                </div>
+
+                <div class="blog-grid">
+                    <div class="blog-card" data-category="genai">
+                        <span class="blog-tag">GenAI</span>
+                        <h3>Building an MCP Server for Malware Traffic Analysis</h3>
+                        <p>How I built a natural language interface connecting Fiddler traffic capture to Gemini LLM using the Model Context Protocol.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <div class="blog-card" data-category="threat">
+                        <span class="blog-tag">Threat Research</span>
+                        <h3>The Rise of ClickFix: Anatomy of a Fake Update Campaign</h3>
+                        <p>Dissecting the ClickFix infection chain, its blockchain-based hiding vectors, and how to extract C2 infrastructure at scale.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <div class="blog-card" data-category="detection">
+                        <span class="blog-tag">Detection</span>
+                        <h3>From EKFiddle to YARA: Building a Detection Rule Pipeline</h3>
+                        <p>The workflow behind converting regex-based web traffic rules into YARA signatures for sandbox deployment.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <div class="blog-card" data-category="genai">
+                        <span class="blog-tag">GenAI</span>
+                        <h3>Shadow AI on Enterprise Networks: Detection and Hunting</h3>
+                        <p>Writing CrowdStrike LogScale and Splunk queries to detect unauthorized LLM usage, AI coding assistants, and GenAI misuse.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <div class="blog-card" data-category="threat">
+                        <span class="blog-tag">Threat Research</span>
+                        <h3>Supply Chain Attacks: Hash Auditing Across Package Repositories</h3>
+                        <p>Building Python tools to perform SHA256 verification across PyPI, npm, GitHub, and HuggingFace during compromise response.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                    <div class="blog-card" data-category="reflections">
+                        <span class="blog-tag">Reflections</span>
+                        <h3>Why I Still Reverse Engineer in the Age of AI</h3>
+                        <p>Thoughts on the enduring value of manual binary analysis and why understanding the machine still matters.</p>
+                        <span class="blog-date">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <span class="footer-name">Lucas Linkowski</span>
+            <span class="footer-location">Based in Wales, UK</span>
+            <span class="footer-copy">&copy; 2026 All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            links.classList.toggle('open');
+        });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            toggle.classList.remove('active');
+            links.classList.remove('open');
+        }));
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.blog-card').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
