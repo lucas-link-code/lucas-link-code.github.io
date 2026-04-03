@@ -4,16 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detecting AI Prompt Injection in the Wild | Lucas Linkowski</title>
-    <meta name="description" content="Building EKFiddle rules to detect indirect prompt injection, AI ClickFix, CSS hidden text traps, and credential exfiltration targeting autonomous AI agents.">
+    <meta name="description" content="Building 28 EKFiddle rules and 82 UrlScan queries to detect indirect prompt injection, AI ClickFix, CSS hidden text traps, and credential exfiltration targeting autonomous AI agents.">
+    <meta name="author" content="Lucas Linkowski">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html">
     <meta property="og:title" content="Detecting AI Prompt Injection in the Wild | Lucas Linkowski">
     <meta property="og:description" content="Building detection rules for indirect prompt injection, AI ClickFix lures, and credential exfiltration attacks targeting autonomous AI agents.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html">
+    <meta property="og:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta property="og:site_name" content="Lucas Linkowski">
+    <meta property="og:image:alt" content="Detecting AI Prompt Injection in the Wild">
+    <meta property="article:published_time" content="2026-03-15T09:00:00Z">
+    <meta property="article:modified_time" content="2026-03-15T09:00:00Z">
+    <meta property="article:author" content="Lucas Linkowski">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Detecting AI Prompt Injection in the Wild | Lucas Linkowski">
+    <meta name="twitter:description" content="Building detection rules for indirect prompt injection, AI ClickFix lures, and credential exfiltration attacks targeting autonomous AI agents.">
+    <meta name="twitter:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta name="twitter:image:alt" content="Detecting AI Prompt Injection in the Wild">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Detecting AI Prompt Injection in the Wild",
+        "description": "Building 28 EKFiddle rules and 82 UrlScan queries to detect indirect prompt injection, AI ClickFix, CSS hidden text traps, and credential exfiltration targeting autonomous AI agents.",
+        "datePublished": "2026-03-15T09:00:00Z",
+        "dateModified": "2026-03-15T09:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "mainEntityOfPage": "https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html"
+    }
+    </script>
     <style>
         .article-header { padding-top: 8rem; padding-bottom: 2rem; }
         .article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); margin-bottom: 2rem; }
@@ -207,6 +242,7 @@ font-size\s{0,3}:\s{0,3}[0-2]px[^&gt;]{0,200}&gt;[^&lt;]{1,300}
         <div class="container footer-container">
             <span class="footer-name">Lucas Linkowski</span>
             <span class="footer-location">Based in Wales, UK</span>
+            <span class="footer-support"><a href="../support.html">Support independent research</a></span>
             <span class="footer-copy">&copy; 2026 All rights reserved.</span>
         </div>
     </footer>

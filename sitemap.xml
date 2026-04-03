@@ -2,17 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lucaslinkowski.com/</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-03-30</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/blog.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-03-30</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/gallery.html</loc>
-        <lastmod>2026-03-28</lastmod>
+        <lastmod>2026-03-30</lastmod>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/support.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/mcp-server-malware-traffic-analysis.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/cognitive-induction-prompting.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <priority>0.7</priority>
     </url>
 </urlset>

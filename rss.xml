@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Lucas Linkowski Blog</title>
+    <link>https://lucaslinkowski.com/blog.html</link>
+    <description>Technical writing on malware analysis, reverse engineering, detection engineering, and GenAI in cybersecurity.</description>
+    <language>en-gb</language>
+
+    <item>
+      <title>The Evolution of Social Engineering: Weaponizing Web Lures Against Agentic AI</title>
+      <link>https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html</link>
+      <description>How cybercriminals are adapting SocGholish and ClickFix campaigns to target autonomous AI agents through Indirect Prompt Injection and the Parallel-Poisoned Web.</description>
+      <pubDate>Sat, 28 Mar 2026 09:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html</guid>
+    </item>
+
+    <item>
+      <title>Building an MCP Server for Malware Traffic Analysis</title>
+      <link>https://lucaslinkowski.com/blog/mcp-server-malware-traffic-analysis.html</link>
+      <description>How I built a natural language interface connecting Fiddler traffic capture to Gemini LLM using the Model Context Protocol.</description>
+      <pubDate>Fri, 21 Mar 2026 09:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/mcp-server-malware-traffic-analysis.html</guid>
+    </item>
+
+    <item>
+      <title>Detecting AI Prompt Injection in the Wild</title>
+      <link>https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html</link>
+      <description>Building EKFiddle rules and UrlScan queries to detect indirect prompt injection, AI ClickFix, and credential exfiltration targeting autonomous AI agents.</description>
+      <pubDate>Sat, 15 Mar 2026 09:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html</guid>
+    </item>
+
+    <item>
+      <title>Cognitive Induction Prompting: Reverse-Engineering How LLMs Process Your Prompts</title>
+      <link>https://lucaslinkowski.com/blog/cognitive-induction-prompting.html</link>
+      <description>A deep dive into the 5-step LLM generation pipeline and how understanding tokenisation, embeddings, attention, prediction, and sampling transforms prompting from guesswork into deliberate control.</description>
+      <pubDate>Mon, 10 Mar 2026 09:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/cognitive-induction-prompting.html</guid>
+    </item>
+  </channel>
+</rss>

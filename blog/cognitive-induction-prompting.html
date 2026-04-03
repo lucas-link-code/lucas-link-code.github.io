@@ -5,15 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cognitive Induction Prompting: Reverse-Engineering How LLMs Process Your Prompts | Lucas Linkowski</title>
     <meta name="description" content="A deep dive into the 5-step LLM generation pipeline and how understanding tokenisation, embeddings, attention, prediction, and sampling transforms prompting from guesswork into deliberate control.">
+    <meta name="author" content="Lucas Linkowski">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://lucaslinkowski.com/blog/cognitive-induction-prompting.html">
     <meta property="og:title" content="Cognitive Induction Prompting | Lucas Linkowski">
     <meta property="og:description" content="Reverse-engineering how LLMs process prompts to maximise output quality. Prompting is probability steering.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://lucaslinkowski.com/blog/cognitive-induction-prompting.html">
+    <meta property="og:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta property="og:site_name" content="Lucas Linkowski">
+    <meta property="og:image:alt" content="Cognitive Induction Prompting">
+    <meta property="article:published_time" content="2026-03-10T09:00:00Z">
+    <meta property="article:modified_time" content="2026-03-10T09:00:00Z">
+    <meta property="article:author" content="Lucas Linkowski">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cognitive Induction Prompting | Lucas Linkowski">
+    <meta name="twitter:description" content="Reverse-engineering how LLMs process prompts to maximise output quality. Prompting is probability steering.">
+    <meta name="twitter:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta name="twitter:image:alt" content="Cognitive Induction Prompting">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cognitive Induction Prompting: Reverse-Engineering How LLMs Process Your Prompts",
+        "description": "A deep dive into the 5-step LLM generation pipeline and how understanding tokenisation, embeddings, attention, prediction, and sampling transforms prompting from guesswork into deliberate control.",
+        "datePublished": "2026-03-10T09:00:00Z",
+        "dateModified": "2026-03-10T09:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "mainEntityOfPage": "https://lucaslinkowski.com/blog/cognitive-induction-prompting.html"
+    }
+    </script>
     <style>
         .article-header { padding-top: 8rem; padding-bottom: 2rem; }
         .article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); margin-bottom: 2rem; }
@@ -248,6 +283,7 @@ PLAN &gt; EXECUTE &gt; VERIFY &gt; OUTPUT
         <div class="container footer-container">
             <span class="footer-name">Lucas Linkowski</span>
             <span class="footer-location">Based in Wales, UK</span>
+            <span class="footer-support"><a href="../support.html">Support independent research</a></span>
             <span class="footer-copy">&copy; 2026 All rights reserved.</span>
         </div>
     </footer>

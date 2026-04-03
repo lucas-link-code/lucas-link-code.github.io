@@ -1,0 +1,9 @@
+{
+  "name": "Lucas Linkowski",
+  "short_name": "Lucas Linkowski",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "description": "Personal website of Lucas Linkowski covering malware defense, reverse engineering, detection engineering, GenAI security work, projects, writing, and photography."
+}

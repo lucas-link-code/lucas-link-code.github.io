@@ -808,6 +808,44 @@ a:hover { color: var(--accent-hover); }
     color: var(--text-muted);
 }
 .footer-name { font-weight: 600; color: var(--text-secondary); }
+.footer-support a {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+.footer-support a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.blog-support-note {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    opacity: 0.92;
+}
+.blog-support-note a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-glow);
+}
+.blog-support-note a:hover {
+    border-bottom-color: var(--accent);
+}
+
+.support-page-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.support-card {
+    margin-bottom: 2rem;
+}
+.support-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
 
 /* ---- SCROLL REVEAL ---- */
 .reveal {
