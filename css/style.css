@@ -834,6 +834,12 @@ a:hover { color: var(--accent-hover); }
 .blog-support-note a:hover {
     border-bottom-color: var(--accent);
 }
+.blog-support-note--footer {
+    margin-top: 2.75rem;
+    margin-bottom: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
 
 .support-page-inner {
     max-width: 900px;
