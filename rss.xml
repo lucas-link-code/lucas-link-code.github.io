@@ -25,7 +25,7 @@
     <item>
       <title>Detecting AI Prompt Injection in the Wild</title>
       <link>https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html</link>
-      <description>Building EKFiddle rules and UrlScan queries to detect indirect prompt injection, AI ClickFix, and credential exfiltration targeting autonomous AI agents.</description>
+      <description>Detection patterns for indirect prompt injection, AI ClickFix for computer-use agents, CSS hidden text traps, HashJack fragments, and credential exfiltration targeting autonomous AI agents.</description>
       <pubDate>Sat, 15 Mar 2026 09:00:00 GMT</pubDate>
       <guid>https://lucaslinkowski.com/blog/detecting-ai-prompt-injection-in-the-wild.html</guid>
     </item>
