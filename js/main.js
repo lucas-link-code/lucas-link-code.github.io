@@ -18,10 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const titles = [
         'Information Security Professional',
-        'Malware Defense Analyst',
+        'Malware Defense Researcher',
         'Reverse Engineer',
-        'Security Researcher',
-        'GenAI Security Researcher'
+        'GenAI/LLM Security Researcher'
     ];
     const typingEl = document.getElementById('typingText');
     let titleIdx = 0, charIdx = 0, deleting = false;

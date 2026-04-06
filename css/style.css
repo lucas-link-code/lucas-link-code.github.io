@@ -426,6 +426,24 @@ a:hover { color: var(--accent-hover); }
     border-bottom-color: var(--accent);
 }
 
+.connect-note .support-link-inline {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+.connect-note .support-link-inline:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent-hover);
+}
+
+.support-page-inner .support-link-inline {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+.support-page-inner .support-link-inline:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent-hover);
+}
+
 /* ---- EXPERTISE ---- */
 .expertise-grid {
     display: grid;
@@ -832,7 +850,17 @@ a:hover { color: var(--accent-hover); }
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-.footer-name { font-weight: 600; color: var(--text-secondary); }
+.footer-name { font-weight: 600; }
+a.footer-name {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+a.footer-name:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
 .footer-support a {
     color: var(--text-muted);
     text-decoration: none;

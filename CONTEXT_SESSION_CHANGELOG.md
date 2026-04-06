@@ -2,6 +2,14 @@
 
 Running snapshot of a **Site Risk Reduction** pass applied in this repository (conversation thread, April 2026). Use this file in a new LLM session instead of re-explaining the work.
 
+## Later update: disclaimer wording
+
+All `site-disclaimer` footers, the home **About** `site-note`, and the **Independence** card on `support.html` use this single sentence only:
+
+`Independent personal website. Views, writing, code, and research are my own and do not represent any employer.`
+
+The follow-on line *No employer affiliation or endorsement is implied* was removed sitewide to avoid ambiguous reads while keeping the same intent.
+
 ## Goal
 
 Reduce employer-adjacent and outside-business-activity optics before broad promotion (for example LinkedIn): soften senior-title signaling in public metadata, remove heavy commercial or advisory framing, keep technical blog content intact, and add clear **independent personal site** disclaimers.
@@ -12,7 +20,7 @@ Reduce employer-adjacent and outside-business-activity optics before broad promo
 
 - **Title, meta description, Open Graph, Twitter:** removed explicit VP / bank-style title strings; descriptions now emphasize malware defense, reverse engineering, detection engineering, and GenAI **research** plus independent writing and tooling.
 - **JSON-LD Person:** `jobTitle` set to a neutral label; `description` aligned with the softer public bio line (no “Senior” / “Innovator” in that field).
-- **About:** added a paragraph with class `site-note` stating the site is independent and views or work are not employer positions or endorsement.
+- **About:** added a paragraph with class `site-note` with the independence disclaimer (same core sentence as the footer; see *Later update* above for final wording).
 - **Connect:** removed the large Buy Me a Coffee **card** from the connect grid; added a single **inline** support sentence with class `connect-note` and `support-link-inline`.
 - **Footer:** “Support independent research” link to `support.html` replaced with direct Buy Me a Coffee URL and label “Support me”; added footer disclaimer paragraph (`site-disclaimer`).
 

@@ -37,7 +37,7 @@ Use this README as default context when editing the site in a new chat. The site
 
 The public site is framed as an **independent personal** site:
 
-- **Footer** on main pages and blog posts includes a short non-affiliation disclaimer (`site-disclaimer` in CSS).
+- **Footer** on main pages and blog posts includes a short disclaimer (`site-disclaimer` in CSS): independent personal site; views, writing, code, and research are the author's own and do not represent any employer.
 - **About** on the home page includes an extra independence note (`site-note`).
 - **Structured data** and **document title / Open Graph / Twitter** metadata avoid banking-specific job titles; use neutral professional labels aligned with current `index.html`.
 - **Buy Me a Coffee** appears as a **text link** (footer and connect area), not as a primary commercial CTA block on the home connect row.
@@ -63,7 +63,7 @@ When adding features, avoid language that reads like paid advisory, sponsorship 
 
 - `.site-note` — about-section independence text
 - `.connect-note` — subtle line under connect cards
-- `.support-link-inline` — muted inline link styling for support URL
+- `.support-link-inline` — muted inline link by default; under Connect, `.connect-note .support-link-inline` is accent-colored and underlined without hover
 - `.site-disclaimer` / `.site-disclaimer--footer` — footer disclaimer block
 
 ## Local preview
