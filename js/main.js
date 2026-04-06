@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const titles = [
-        'VP, Information Security Professional',
-        'Senior Malware Defense Analyst',
+        'Information Security Professional',
+        'Malware Defense Analyst',
         'Reverse Engineer',
-        'Individual Contributor',
+        'Security Researcher',
         'GenAI Security Researcher'
     ];
     const typingEl = document.getElementById('typingText');
