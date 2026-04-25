@@ -14,7 +14,7 @@
     --amber-hover: #fbbf24;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-    --container: 1140px;
+    --container: 1180px;
     --section-py: 6rem;
     --radius: 12px;
     --radius-sm: 8px;
@@ -34,6 +34,7 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     font-size: 1rem;
+    letter-spacing: -0.003em;
     background-image: radial-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px);
     background-size: 32px 32px;
     overflow-x: hidden;
@@ -196,8 +197,9 @@ a:hover { color: var(--accent-hover); }
     color: var(--accent);
     font-family: var(--font-mono);
     font-weight: 500;
-    min-height: 2rem;
+    min-height: 2em;
     margin-bottom: 1.5rem;
+    word-break: break-word;
 }
 .typing-cursor {
     animation: blink 1s step-end infinite;
@@ -208,7 +210,7 @@ a:hover { color: var(--accent-hover); }
 .hero-tagline {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.65;
     margin-bottom: 2rem;
     max-width: 540px;
 }
@@ -266,7 +268,8 @@ a:hover { color: var(--accent-hover); }
     padding: 0.75rem 1.75rem;
     border-radius: var(--radius-sm);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
     transition: all 0.25s;
     cursor: pointer;
     border: none;
@@ -275,6 +278,7 @@ a:hover { color: var(--accent-hover); }
 .btn-primary {
     background: var(--accent);
     color: var(--bg-primary);
+    box-shadow: 0 8px 24px -12px rgba(139, 92, 246, 0.45);
 }
 .btn-primary:hover {
     background: var(--accent-hover);
@@ -332,12 +336,12 @@ a:hover { color: var(--accent-hover); }
 .section-title {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     letter-spacing: -0.02em;
 }
 .section-subtitle {
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 2.25rem;
     font-size: 1.05rem;
 }
 .section-cta {
@@ -348,8 +352,8 @@ a:hover { color: var(--accent-hover); }
 /* ---- PARALLAX ---- */
 .parallax-divider {
     height: 420px;
-    margin-top: -3rem;
-    margin-bottom: -3rem;
+    margin-top: -2rem;
+    margin-bottom: -2rem;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -386,9 +390,10 @@ a:hover { color: var(--accent-hover); }
     height: 40px;
 }
 .card h3 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
 }
 .card p {
     color: var(--text-secondary);
@@ -406,7 +411,8 @@ a:hover { color: var(--accent-hover); }
 .about-text p {
     color: var(--text-secondary);
     margin-bottom: 1.25rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    max-width: 62ch;
 }
 .about-text p:last-child { margin-bottom: 0; }
 .about-interests {
@@ -578,6 +584,7 @@ a:hover { color: var(--accent-hover); }
     margin-bottom: 0.5rem;
     font-family: var(--font-mono);
     color: var(--accent);
+    letter-spacing: -0.01em;
 }
 .project-card p {
     color: var(--text-secondary);
@@ -616,16 +623,17 @@ a:hover { color: var(--accent-hover); }
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
     color: var(--text-secondary);
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.85rem;
     border-radius: 6px;
     font-size: 0.8rem;
     font-family: var(--font-mono);
     font-weight: 500;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .tool-badge:hover {
     border-color: var(--accent);
     color: var(--text-primary);
+    background: rgba(139, 92, 246, 0.08);
 }
 
 /* ---- THOUGHT LEADERSHIP ---- */
@@ -638,7 +646,8 @@ a:hover { color: var(--accent-hover); }
 .leadership-text p {
     color: var(--text-secondary);
     margin-bottom: 1.25rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
+    max-width: 62ch;
 }
 
 /* ---- BLOG FILTERS ---- */
@@ -707,6 +716,7 @@ a:hover { color: var(--accent-hover); }
     font-weight: 600;
     margin-bottom: 0.75rem;
     line-height: 1.4;
+    letter-spacing: -0.01em;
 }
 .blog-card p {
     color: var(--text-secondary);
@@ -849,7 +859,9 @@ a:hover { color: var(--accent-hover); }
     align-items: center;
     gap: 0.75rem;
     padding: 2rem 3rem;
-    background: var(--bg-secondary);
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text-secondary);
@@ -905,7 +917,7 @@ a.footer-name:hover {
     padding-top: 1rem;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     line-height: 1.8;
     text-align: center;
 }
@@ -986,10 +998,14 @@ a.footer-name:hover {
     .nav-links li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
     .nav-links a { font-size: 1rem; }
 
+    .hero { min-height: auto; padding: 5rem 0 3rem; }
     .hero-container { flex-direction: column-reverse; text-align: center; }
-    .hero-image-wrapper { width: 220px; height: 270px; margin: 0 auto; }
-    .hero-tagline { margin: 0 auto 2rem; }
+    .hero-image-wrapper { width: 240px; height: 290px; margin: 0 auto; }
+    .hero-title-line { min-height: calc(2 * 1.7em); }
+    .hero-tagline { margin: 0 auto 1.5rem; }
     .hero-cta { justify-content: center; }
+
+    .section-subtitle { margin-bottom: 1.75rem; }
 
     .about-content { grid-template-columns: 1fr; }
     .expertise-grid { grid-template-columns: 1fr; }
@@ -999,6 +1015,8 @@ a.footer-name:hover {
     .blog-grid { grid-template-columns: 1fr; }
     .gallery-grid-preview { grid-template-columns: repeat(2, 1fr); }
     .leadership-content { grid-template-columns: 1fr; }
+
+    .news-article { padding: 1.5rem; }
 
     .connect-links { flex-direction: column; align-items: center; }
     .connect-card { width: 100%; max-width: 300px; }
@@ -1016,7 +1034,16 @@ a.footer-name:hover {
 }
 
 @media (max-width: 480px) {
-    .hero-name { font-size: 2rem; }
+    .container { padding: 0 1.25rem; }
+
+    .hero { padding: 4.5rem 0 2.5rem; }
+    .hero-name { font-size: 1.85rem; line-height: 1.15; }
+    .hero-greeting { font-size: 0.85rem; }
+    .hero-title-line { font-size: 0.9rem; }
+    .hero-cta .btn { padding: 0.7rem 1.4rem; }
+
+    .section { padding: 3.5rem 0; }
+
     .impact-grid { grid-template-columns: 1fr; }
     .arsenal-grid { grid-template-columns: 1fr; }
     .gallery-grid-preview { grid-template-columns: 1fr; }

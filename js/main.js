@@ -29,6 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const current = titles[titleIdx];
         if (deleting) {
             charIdx--;
+            if (charIdx === 0) {
+                deleting = false;
+                titleIdx = (titleIdx + 1) % titles.length;
+                setTimeout(typeLoop, 300);
+                return;
+            }
             typingEl.textContent = current.substring(0, charIdx);
         } else {
             charIdx++;
@@ -38,10 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!deleting && charIdx === current.length) {
             setTimeout(() => { deleting = true; typeLoop(); }, 2200);
             return;
-        }
-        if (deleting && charIdx === 0) {
-            deleting = false;
-            titleIdx = (titleIdx + 1) % titles.length;
         }
         setTimeout(typeLoop, deleting ? 20 : 80);
     }
