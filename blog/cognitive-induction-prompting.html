@@ -90,13 +90,13 @@
             </header>
 
             <div class="article-body">
-                <p>Most prompt engineering advice reads like a recipe book. Add a role. Say "think step by step." Use few-shot examples. The advice works, sometimes, but nobody explains why. When it fails, you have no diagnostic framework. You tweak words, re-run, hope for a better result.</p>
+                <p>Most prompt engineering advice reads like a recipe book. Add a role. Say "think step by step." Use few-shot examples. The advice often works, but many explanations stop short of the underlying mechanics. When it fails, you have no diagnostic framework. You tweak words, re-run, hope for a better result.</p>
 
                 <p>I built a presentation called Cognitive Induction Prompting to address this. The core thesis is straightforward: prompting is probability steering. Every word you write changes the distribution over the model's next output token. Once you understand the mechanics, prompt engineering becomes deliberate control rather than guesswork. This article summarises the key ideas from that talk.</p>
 
                 <h2>The 5-step generation loop</h2>
 
-                <p>Every LLM processes your prompt through five stages. Every prompting technique you have ever used targets one or more of these stages. Understanding which stage you are affecting, and which stage failed when output disappoints you, is the entire diagnostic framework.</p>
+                <p>Every LLM processes your prompt through five stages. Every prompting technique you have ever used targets one or more of these stages. Understanding which stage you are affecting, and which stage failed when output disappoints you, gives you a practical diagnostic framework.</p>
 
                 <p><strong>Tokenize.</strong> Your text is split into token IDs. Ambiguity is preserved, not resolved. The word "Apple" maps to the same token ID whether you mean the company or the fruit. The model has no way to disambiguate at this stage.</p>
 
@@ -156,11 +156,11 @@ Output: Findings, Evidence, Confidence.</code></pre>
 [your actual question]
 &lt;/task&gt;</code></pre>
 
-                <p>Claude respects XML tags natively. GPT and Gemini also respond well to clear sectioning. The critical rules go first and last, exploiting the primacy and recency attention bias. Attention control reduces both hallucination and prompt injection risk simultaneously.</p>
+                <p>Claude respects XML tags natively. GPT and Gemini also respond well to clear sectioning. Placing the critical rules first and last helps take advantage of primacy and recency effects in attention. Attention control reduces both hallucination and prompt injection risk simultaneously.</p>
 
                 <h2>Why hallucinations happen and how to mitigate them</h2>
 
-                <p>The training objective is to predict the most likely next token. Not to produce true statements. A correct answer and a confident wrong answer have similar statistical profiles. The model cannot distinguish them.</p>
+                <p>The training objective is to predict the most likely next token. Not to produce true statements. A correct answer and a confident wrong answer have similar statistical profiles. The training objective does not reliably distinguish between them.</p>
 
                 <p>In security work this creates specific risks: fabricated IOCs with realistic formatting, invented CVE IDs with plausible descriptions, wrong threat actor attribution, non-existent Python packages that could become supply chain vectors, and code that compiles but contains subtle security bugs.</p>
 
@@ -221,7 +221,7 @@ PLAN &gt; EXECUTE &gt; VERIFY &gt; OUTPUT
 
                 <p>LLMs are controllable once you understand the 5-step loop. Ambiguity is the most expensive prompt failure, and clear anchors do most of the heavy lifting. The model does not check truth, so evidence rules, verification loops, and abstention paths make outputs dependable. Every prompting technique targets a specific pipeline stage, which means you can debug systematically. When tools are involved, policy must live outside the model.</p>
 
-                <p>The most reliable prompt is not the most eloquent one. It is the one that makes the right next tokens statistically easiest to produce.</p>
+                <p>The most reliable prompt is not the most eloquent one. It is the one that makes the intended next tokens statistically easier to produce.</p>
             </div>
 
             <footer class="article-footer">

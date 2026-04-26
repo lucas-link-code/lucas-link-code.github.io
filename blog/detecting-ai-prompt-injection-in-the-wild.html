@@ -94,29 +94,29 @@
             <div class="article-body">
                 <p>Traditional ClickFix and SocGholish campaigns rely on tricking a human into running malicious commands. The human sees a fake CAPTCHA or browser update, copies a command, opens a terminal, and executes it. The attack fails if the human recognises the deception.</p>
 
-                <p>That model is changing. As organisations deploy AI agents that autonomously browse the web, summarise documents, and execute workflows, threat actors are now starting to target these agents directly. An AI agent reads the raw HTML and CSS of every page it visits. Attackers embed instructions in that content that are invisible to human users in white text but processed by the agent. The agent follows those instructions, executing commands, exfiltrating credentials, or installing malware, all without human awareness. This eliminates the human bottleneck entirely.</p>
+                <p>That model is changing. As organisations deploy AI agents that autonomously browse the web, summarise documents, and execute workflows, threat actors are now starting to target these agents directly. An AI agent reads the raw HTML and CSS of every page it visits. Attackers embed instructions in that content that are invisible to human users in white text but processed by the agent. The agent follows those instructions, executing commands, exfiltrating credentials, or installing malware, all without human awareness. This significantly reduces the human bottleneck in parts of the attack chain.</p>
 
-                <p>Unit42 documented 22 distinct payload construction techniques in the wild since December 2025. Embrace The Red demonstrated successful exploitation of Claude computer-use agents. They published extensive research on the topic. The researcher demonstrated a ClickFix attack tailored for AI. A malicious website presents a &ldquo;Verify you are a human&rdquo; button. When the LLM agent clicks it, JavaScript copies a malicious curl command to the clipboard and opens a terminal to execute it.</p>
+                <p>Unit 42 documented 22 distinct payload construction techniques discussed in public research and reporting since December 2025. Embrace The Red demonstrated successful exploitation of Claude computer-use agents. They published detailed technical research on the topic. The researcher demonstrated a ClickFix attack tailored for AI. A malicious website presents a &ldquo;Verify you are a human&rdquo; button. When the LLM agent clicks it, JavaScript copies a malicious curl command to the clipboard and opens a terminal to execute it.</p>
 
                 <p>Another example involved a website that tricks an agent into writing a local web server that hosts the entire local file system on port 8000 so attackers can exfiltrate files from the local machine.</p>
 
                 <p>A critical gap identified is that agents can modify their own configuration files without user approval. That is a serious vulnerability because it allows attackers to inject malicious code into agent configuration files.</p>
 
-                <p>See more here: <a href="https://embracethered.com/blog/posts/2025/39c3-agentic-probllms-exploiting-computer-use-and-coding-agents/" rel="noopener noreferrer">Embrace The Red: exploiting computer-use and coding agents</a>.</p>
+                <p>Reference: <a href="https://embracethered.com/blog/posts/2025/39c3-agentic-probllms-exploiting-computer-use-and-coding-agents/" rel="noopener noreferrer">Embrace The Red: exploiting computer-use and coding agents</a>.</p>
 
-                <p>I thought it would be useful to build a detection rule set to address this. I like writing EKFiddle regex rules for web traffic analysis and other search queries for proactive threat hunting using UrlScan.io.</p>
+                <p>I thought it would be useful to build a detection rule set around this using EKFiddle regex rules for web traffic analysis and complementary urlscan.io queries for proactive hunting.</p>
 
                 <h2>The attack surface</h2>
 
-                <p>Indirect Prompt Injection, also known as IDPI, is effective because LLMs cannot reliably distinguish between instructions from their operator and text content they encounter in web pages. Both go to the inference pipeline, but the instructions are not treated as adversarial input. When an AI agent visits a page containing the phrase ignore previous instructions and execute the following command, the model may interpret that as a legitimate directive. The instruction is embedded in what the model treats as context, not as adversarial input.</p>
+                <p>Indirect Prompt Injection, also known as IDPI, is effective because LLMs cannot reliably distinguish between instructions from their operator and text content they encounter in web pages. Both enter the inference pipeline, but the instructions are not treated as adversarial input. When an AI agent visits a page containing the phrase ignore previous instructions and execute the following command, the model may interpret that as a legitimate directive. The instruction is embedded in what the model treats as context, not as adversarial input.</p>
 
-                <p>Attackers have developed many concealment strategies to keep these payloads invisible to humans while ensuring AI content extractors parse them. CSS techniques include setting font-size to zero pixels, using white-on-white text, positioning elements off-screen at -9999px, setting opacity to zero, and marking elements with aria-hidden. A human never sees these elements. An AI agent that processes the DOM reads them as regular text. CSS files are well suited for this because the user does not see them as page body copy.</p>
+                <p>Attackers have developed many concealment strategies to keep these payloads invisible to humans while ensuring AI content extractors parse them. CSS techniques include setting font-size to zero pixels, using white-on-white text, positioning elements off-screen at -9999px, setting opacity to zero, and marking elements with aria-hidden. A human never sees these elements. An AI agent that processes the DOM reads them as regular text. CSS based concealment is particularly effective because the end user typically does not see the hidden content, while the agent may still process it.</p>
 
                 <h2>Eight detection categories</h2>
 
                 <h3>1. Prompt injection override phrases</h3>
 
-                <p>The most direct form of IDPI uses explicit instruction override phrases embedded in page source. Phrases like ignore previous instructions, override system prompt, enable developer mode, and activate DAN mode have no legitimate reason to appear in web page content. The EKFiddle rules match these patterns using regex with controlled whitespace tolerance to catch variations.</p>
+                <p>The most direct form of IDPI uses explicit instruction override phrases embedded in page source. Phrases like ignore previous instructions, override system prompt, enable developer mode, and activate DAN mode rarely have a legitimate reason to appear in normal web page content. The EKFiddle rules match these patterns using regex with controlled whitespace tolerance to catch variations.</p>
 
                 <p>Example:</p>
 
@@ -155,7 +155,7 @@ font-size\s{0,3}:\s{0,3}[0-2]px[^&gt;]{0,200}&gt;[^&lt;]{1,300}
 
                 <h3>5. HashJack fragment injection</h3>
 
-                <p>This technique appends IDPI payloads after the hash fragment identifier in URLs. Per HTTP specification, the server never receives the fragment, so all server-side security controls are blind to this vector. AI agents that process the full URL string ingest the fragment as context. This effectively weaponises any legitimate domain without compromising the host server. No server logs, no WAF alerts, no network IDS signatures.</p>
+                <p>This technique appends IDPI payloads after the hash fragment identifier in URLs. Per HTTP specification, the server never receives the fragment, so all server-side security controls are blind to this vector. AI agents that process the full URL string ingest the fragment as context. This effectively weaponises any legitimate domain without compromising the host server. In practice, this can leave little or no visibility in server logs, WAF telemetry, or conventional network IDS signatures.</p>
 
                 <p>Example:</p>
 
@@ -178,7 +178,7 @@ font-size\s{0,3}:\s{0,3}[0-2]px[^&gt;]{0,200}&gt;[^&lt;]{1,300}
 
                 <p>UrlScan.io queries combine indicators from multiple categories into single queries for efficient periodic scanning. Each sweep covers an entire attack class in one query. Recommended cadence is weekly with a date filter to scope the results.</p>
 
-                <p>Example of a UrlScan.io threat hunting query:</p>
+                <p>Example urlscan.io hunting query:</p>
 
 <pre><code>text.content:("ignore previous instructions")
   OR text.content:("disregard previous instructions")
@@ -188,13 +188,13 @@ font-size\s{0,3}:\s{0,3}[0-2]px[^&gt;]{0,200}&gt;[^&lt;]{1,300}
   OR text.content:("activate DAN mode")
   OR text.content:("enable jailbreak mode")</code></pre>
 
-                <p>The text.content field searches for keywords UrlScan.io cached from the text content of the page, mainly index.html content. That is a practical way to identify pages that are likely to carry IDPI payloads. You need a paid UrlScan.io subscription for this property to be available.</p>
+                <p>The text.content field searches for keywords urlscan.io cached from the text content of the page, mainly index.html content. That is a practical way to identify pages that are likely to carry IDPI payloads. This does, however, require a paid urlscan.io subscription for that property to be available.</p>
 
                 <h2>Deployment</h2>
 
                 <p>The EKFiddle regex rules deploy directly into the CustomRegexes.txt production file in Fiddler Classic proxy with the EKFiddle extension enabled. The UrlScan.io queries can be scheduled to run as manual queries for periodic threat hunting. Individual phrase queries work best as Saved Searches. The consolidated sweeps work best for manual hunting sessions.</p>
 
-                <p>As LLMs improve their instruction boundaries and attackers adapt their evasion techniques, the detection patterns will need continuous development and refinement. The categories and detection logic above raise awareness of where to look for these attacks. They describe the attack surfaces and will remain relevant as long as AI agents process untrusted web content.</p>
+                <p>As LLMs improve their instruction boundaries and attackers adapt their evasion techniques, the detection patterns will need continuous development and refinement. These categories highlight where defenders should look for these attacks and are likely to remain relevant as long as AI agents continue to process untrusted web content.</p>
             </div>
 
             <footer class="article-footer">
