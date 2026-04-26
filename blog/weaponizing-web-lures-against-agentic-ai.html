@@ -49,73 +49,10 @@
         "mainEntityOfPage": "https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html"
     }
     </script>
-    <style>
-        .article-header { padding-top: 8rem; padding-bottom: 2rem; }
-        .article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); margin-bottom: 2rem; }
-        .article-body { max-width: 900px; }
-        .article-body p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8; }
-        .article-body h2 { margin: 2.5rem 0 1rem; font-size: 1.5rem; }
-        .article-body h3 { margin: 2rem 0 0.75rem; font-size: 1.2rem; }
-        .article-body code {
-            background: var(--bg-tertiary);
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.9em;
-            color: var(--accent);
-        }
-        .article-body pre {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 1.25rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-        .article-body pre code { background: none; padding: 0; }
-        .article-body strong { color: var(--text-primary); font-weight: 600; }
-        .article-body ul { margin: 1.5rem 0 1.5rem 2rem; }
-        .article-body li { color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.7; }
-        .article-table {
-            width: 100%;
-            margin: 2rem 0;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-        }
-        .article-table thead {
-            background: var(--bg-tertiary);
-        }
-        .article-table th {
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--accent);
-            border-bottom: 1px solid var(--border);
-            font-size: 0.85rem;
-            font-family: var(--font-mono);
-        }
-        .article-table td {
-            padding: 0.875rem 1rem;
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border);
-            line-height: 1.6;
-        }
-        .article-table tr:last-child td {
-            border-bottom: none;
-        }
-        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); font-weight: 500; margin-bottom: 2rem; }
-        .back-link:hover { color: var(--accent-hover); }
-    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+
     <nav class="navbar scrolled" id="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
@@ -135,22 +72,24 @@
         </div>
     </nav>
 
-    <main id="main-content">
-        <article class="section">
-            <div class="container">
-                <a href="../blog.html" class="back-link">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8L10 13"/></svg>
-                    Back to Blog
-                </a>
-                <header class="article-header">
-                    <span class="blog-tag">GenAI</span>
-                    <h1>The Evolution of Social Engineering: Weaponizing Web Lures Against Agentic AI</h1>
-                    <div class="article-meta">
-                        <time>March 2026</time>
-                    </div>
-                </header>
+    <main class="article-page" id="main-content">
+        <article class="container">
+            <a href="../blog.html" class="article-eyebrow">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8L10 13"/></svg>
+                Back to writing
+            </a>
 
-                <div class="article-body">
+            <header class="article-header">
+                <span class="blog-tag">GenAI</span>
+                <h1 class="article-title">The Evolution of Social Engineering: Weaponizing Web Lures Against Agentic AI</h1>
+                <div class="article-meta">
+                    <time datetime="2026-03-28">March 2026</time>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <span>18 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
                     <h2>The Paradigm Shift in Initial Access Operations</h2>
                     
                     <p>The cybersecurity landscape is undergoing a shift in initial access operations, driven by the rapid integration of Large Language Models and agentic Artificial Intelligence systems into enterprise environments. Historically, initial access brokers and advanced cybercriminal syndicates have relied on the probabilistic nature of human psychology to gain unauthorized access to secure networks. Attack frameworks have traditionally leveraged urgency, artificial authority, or technical confusion to deceive end-users into manually executing malicious payloads. However, as organizations increasingly deploy autonomous AI agents to browse the open web, summarize vast quantities of documents, and execute complex workflows, threat actors are aggressively adapting their methodologies to exploit these new digital intermediaries. The attack surface has thus expanded far beyond the human element, pivoting toward the algorithmic vulnerabilities inherent in AI agents.</p>
@@ -343,15 +282,22 @@
                     <p>Defenders must recognize that every web page an AI agent visits is now a potential prompt delivery mechanism. Every URL fragment, every hidden CSS block, every zero-width character is a vector. The era of AI-in-the-loop exploitation has arrived, and security teams must evolve their defenses accordingly.</p>
                 </div>
 
+            <footer class="article-footer">
                 <div class="share-links">
-                    <a href="#" class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank','width=600,height=400');return false;">Share on LinkedIn</a>
-                    <a href="#" class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;">Share on X</a>
+                    <button class="share-btn" data-share="linkedin">Share on LinkedIn</button>
+                    <button class="share-btn" data-share="twitter">Share on X</button>
                 </div>
-
-                <div class="article-back">
-                    <a href="../blog.html" class="btn btn-outline">&larr; Back to Blog</a>
+                <nav class="article-nav" aria-label="Post navigation">
+                    <a href="mcp-server-malware-traffic-analysis.html" class="article-nav-link article-nav-prev">
+                        <span class="article-nav-dir">&larr; Previous</span>
+                        <span class="article-nav-title">Building an MCP Server for Malware Traffic Analysis</span>
+                    </a>
+                    <span></span>
+                </nav>
+                <div class="article-footer-back">
+                    <a href="../blog.html" class="btn btn-outline">&larr; Back to writing</a>
                 </div>
-            </div>
+            </footer>
         </article>
     </main>
 

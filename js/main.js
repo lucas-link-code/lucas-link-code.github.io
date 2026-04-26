@@ -116,6 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
+    document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            const targets = {
+                linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}`
+            };
+            const target = targets[btn.dataset.share];
+            if (target) window.open(target, '_blank', 'width=600,height=400');
+        });
+    });
+
     const sections = document.querySelectorAll('section[id]');
     const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 

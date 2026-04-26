@@ -36,6 +36,8 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+
     <nav class="navbar scrolled" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
@@ -55,11 +57,21 @@
         </div>
     </nav>
 
-    <main style="padding-top: 6rem;">
+    <main class="blog-index-main" id="main-content">
         <section class="section">
             <div class="container">
-                <h1 class="section-title">Blog</h1>
-                <p class="section-subtitle">Technical analysis, threat research, reflections, and thoughts on the evolving cybersecurity landscape.</p>
+                <h1 class="section-title">Writing</h1>
+                <p class="section-subtitle">Long-form technical writing on malware analysis, reverse engineering, detection engineering, and GenAI security. Each post is a self-contained piece of research or operational notes from the work I do.</p>
+
+                <div class="blog-meta-row">
+                    <span class="meta-count"><strong>4</strong> published posts</span>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <span class="meta-pipeline"><strong>3</strong> in pipeline</span>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <a href="rss.xml" rel="alternate" type="application/rss+xml">RSS feed</a>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <a href="#pipeline">Jump to upcoming</a>
+                </div>
 
                 <div class="blog-filters">
                     <button class="filter-btn active" data-filter="all">All</button>
@@ -69,50 +81,68 @@
                     <button class="filter-btn" data-filter="reflections">Reflections</button>
                 </div>
 
+                <h2 class="blog-section-label">Published</h2>
                 <div class="blog-grid">
+                    <a href="blog/detecting-ai-prompt-injection-in-the-wild.html" class="blog-card" data-category="genai">
+                            <span class="blog-tag">GenAI</span>
+                            <h3>Detecting AI Prompt Injection in the Wild</h3>
+                            <p>EKFiddle rules and UrlScan.io hunting queries for IDPI, AI ClickFix lures, hidden CSS traps, and agent credential exfiltration.</p>
+                            <div class="blog-card-foot">
+                                <span class="blog-date">March 2026</span>
+                                <span class="blog-card-cue">Read &rarr;</span>
+                            </div>
+                        </a>
                     <a href="blog/weaponizing-web-lures-against-agentic-ai.html" class="blog-card" data-category="genai">
                         <span class="blog-tag">GenAI</span>
                         <h3>The Evolution of Social Engineering: Weaponizing Web Lures Against Agentic AI</h3>
                         <p>How cybercriminals are adapting SocGholish and ClickFix campaigns to target autonomous AI agents through Indirect Prompt Injection, agent fingerprinting, and the Parallel-Poisoned Web.</p>
-                        <span class="blog-date">March 2026</span>
+                        <div class="blog-card-foot">
+                            <span class="blog-date">March 2026</span>
+                            <span class="blog-card-cue">Read &rarr;</span>
+                        </div>
                     </a>
                     <a href="blog/mcp-server-malware-traffic-analysis.html" class="blog-card" data-category="genai">
                         <span class="blog-tag">GenAI</span>
                         <h3>Building an MCP Server for Malware Traffic Analysis</h3>
                         <p>How I built a natural language interface connecting Fiddler traffic capture to Gemini LLM using the Model Context Protocol.</p>
-                        <span class="blog-date">March 2026</span>
-                    </a>
-                    <a href="blog/detecting-ai-prompt-injection-in-the-wild.html" class="blog-card" data-category="genai">
-                        <span class="blog-tag">GenAI</span>
-                        <h3>Detecting AI Prompt Injection in the Wild</h3>
-                        <p>EKFiddle rules and UrlScan.io hunting queries for IDPI, AI ClickFix lures, hidden CSS traps, and agent credential exfiltration.</p>
-                        <span class="blog-date">April 2026</span>
+                        <div class="blog-card-foot">
+                            <span class="blog-date">March 2026</span>
+                            <span class="blog-card-cue">Read &rarr;</span>
+                        </div>
                     </a>
                     <a href="blog/cognitive-induction-prompting.html" class="blog-card" data-category="genai">
                         <span class="blog-tag">GenAI</span>
                         <h3>Cognitive Induction Prompting</h3>
                         <p>Reverse-engineering the 5-step LLM generation pipeline to transform prompting from guesswork into deliberate probability steering.</p>
-                        <span class="blog-date">March 2026</span>
+                        <div class="blog-card-foot">
+                            <span class="blog-date">March 2026</span>
+                            <span class="blog-card-cue">Read &rarr;</span>
+                        </div>
                     </a>
-                    <div class="blog-card" data-category="detection">
+                </div>
+
+                <h2 id="pipeline" class="blog-section-label">In Pipeline</h2>
+                <div class="blog-grid">
+                    <div class="blog-card blog-card--soon" data-category="detection">
                         <span class="blog-tag">Detection</span>
                         <h3>From EKFiddle to YARA: Building a Detection Rule Pipeline</h3>
                         <p>The workflow behind converting regex-based web traffic rules into YARA signatures for sandbox deployment.</p>
-                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-date">Coming soon</span>
                     </div>
-                    <div class="blog-card" data-category="genai">
+                    <div class="blog-card blog-card--soon" data-category="genai">
                         <span class="blog-tag">GenAI</span>
                         <h3>Shadow AI on Enterprise Networks: Detection and Hunting</h3>
                         <p>Writing CrowdStrike LogScale and Splunk queries to detect unauthorized LLM usage, AI coding assistants, and GenAI misuse.</p>
-                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-date">Coming soon</span>
                     </div>
-                    <div class="blog-card" data-category="threat">
+                    <div class="blog-card blog-card--soon" data-category="threat">
                         <span class="blog-tag">Threat Research</span>
                         <h3>Supply Chain Attacks: Hash Auditing Across Package Repositories</h3>
                         <p>Building Python tools to perform SHA256 verification across PyPI, npm, GitHub, and HuggingFace during compromise response.</p>
-                        <span class="blog-date">Coming Soon</span>
+                        <span class="blog-date">Coming soon</span>
                     </div>
                 </div>
+
                 <p class="section-subtitle blog-support-note blog-support-note--footer">Independent personal writing and research. Views are my own and do not represent any employer.</p>
             </div>
         </section>

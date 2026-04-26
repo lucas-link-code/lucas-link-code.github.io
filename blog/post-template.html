@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <!-- Replace SLUG, ARTICLE TITLE, ARTICLE DESCRIPTION, and ISO dates when publishing. -->
+    <!-- When publishing replace SLUG, ARTICLE TITLE, ARTICLE DESCRIPTION, dates, category, read time, and body. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -50,47 +50,10 @@
         "mainEntityOfPage": "https://lucaslinkowski.com/blog/SLUG.html"
     }
     </script>
-    <style>
-        .article-header { padding-top: 8rem; padding-bottom: 2rem; }
-        .article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); margin-bottom: 2rem; }
-        .article-body { max-width: 900px; }
-        .article-body p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8; }
-        .article-body h2 { margin: 2.5rem 0 1rem; font-size: 1.5rem; }
-        .article-body h3 { margin: 2rem 0 0.75rem; font-size: 1.2rem; }
-        .article-body code {
-            background: var(--bg-tertiary);
-            padding: 0.15rem 0.4rem;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.9em;
-            color: var(--accent);
-        }
-        .article-body pre {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 1.25rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-        .article-body pre code { background: none; padding: 0; }
-        .article-body blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 1.25rem;
-            margin: 1.5rem 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.25rem; color: var(--text-secondary); }
-        .article-body li { margin-bottom: 0.5rem; line-height: 1.7; }
-        .article-body img { border-radius: var(--radius-sm); border: 1px solid var(--border); margin: 1.5rem 0; }
-    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+
     <nav class="navbar scrolled" id="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
@@ -110,19 +73,25 @@
         </div>
     </nav>
 
-    <main>
+    <main class="article-page" id="main-content">
         <article class="container">
+            <a href="../blog.html" class="article-eyebrow">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8L10 13"/></svg>
+                Back to writing
+            </a>
+
             <header class="article-header">
                 <span class="blog-tag">CATEGORY</span>
-                <h1 class="section-title">ARTICLE TITLE</h1>
+                <h1 class="article-title">ARTICLE TITLE</h1>
                 <div class="article-meta">
-                    <span>DATE</span>
+                    <time datetime="2026-01-01">DATE</time>
+                    <span class="meta-sep" aria-hidden="true"></span>
                     <span>X min read</span>
                 </div>
             </header>
 
             <div class="article-body">
-                <p>Article content goes here. This template provides styling for paragraphs, headings, code blocks, blockquotes, lists, and images.</p>
+                <p>Article content goes here. This template provides styling for paragraphs, headings, code blocks, blockquotes, lists, tables, and images. All article styling is shared from <code>css/style.css</code>; do not paste local style blocks.</p>
 
                 <h2>Section Heading</h2>
                 <p>Continue writing your article content. Use semantic HTML elements for structure.</p>
@@ -139,14 +108,26 @@ print(code_example)</code></pre>
                 </ul>
             </div>
 
-            <div class="share-links">
-                <a href="#" class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank','width=600,height=400');return false;">Share on LinkedIn</a>
-                <a href="#" class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;">Share on X</a>
-            </div>
-
-            <div class="article-back">
-                <a href="../blog.html" class="btn btn-outline">&larr; Back to Blog</a>
-            </div>
+            <footer class="article-footer">
+                <div class="share-links">
+                    <button class="share-btn" data-share="linkedin">Share on LinkedIn</button>
+                    <button class="share-btn" data-share="twitter">Share on X</button>
+                </div>
+                <!-- article-nav: add prev/next links here when publishing. See existing posts for pattern. -->
+                <nav class="article-nav" aria-label="Post navigation">
+                    <a href="PREV-SLUG.html" class="article-nav-link article-nav-prev">
+                        <span class="article-nav-dir">&larr; Previous</span>
+                        <span class="article-nav-title">PREV TITLE</span>
+                    </a>
+                    <a href="NEXT-SLUG.html" class="article-nav-link article-nav-next">
+                        <span class="article-nav-dir">Next &rarr;</span>
+                        <span class="article-nav-title">NEXT TITLE</span>
+                    </a>
+                </nav>
+                <div class="article-footer-back">
+                    <a href="../blog.html" class="btn btn-outline">&larr; Back to writing</a>
+                </div>
+            </footer>
         </article>
     </main>
 
@@ -160,18 +141,6 @@ print(code_example)</code></pre>
         <p class="site-disclaimer site-disclaimer--footer">Independent personal website. Views, writing, code, and research are my own and do not represent any employer.</p>
     </footer>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggle = document.getElementById('navToggle');
-        const links = document.getElementById('navLinks');
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('active');
-            links.classList.toggle('open');
-        });
-        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            toggle.classList.remove('active');
-            links.classList.remove('open');
-        }));
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
