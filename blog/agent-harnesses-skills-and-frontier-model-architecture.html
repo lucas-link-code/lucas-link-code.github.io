@@ -91,22 +91,22 @@
 
             <div class="article-body">
                 <p>The modern frontier model is no longer a standalone chatbot. In practical deployments, the model is only one layer in a much larger system made up of orchestration logic, tool discovery, execution runtimes, security boundaries, memory handling, and approval controls. That surrounding system is what actually turns a model into an agent.</p>
-                <p>This is where a lot of the public discussion still falls short. People often compare OpenAI, Google, and Anthropic as if the model alone determines what an agent can do. In reality, the harness determines a large part of the outcome. The same model class can feel radically different depending on whether it runs through a hosted sandbox, a local CLI, a programmatic tool runner, a multi agent protocol, or a tightly restricted enterprise control plane.</p>
+                <p>This is where a lot of the public discussion falls short. We often compare OpenAI, Google, and Anthropic as if the model alone determines what an agent can do. In reality, the harness determines a large part of the outcome. The same model class can feel radically different depending on whether it runs through a hosted sandbox, a local CLI, a programmatic tool runner, a multi agent protocol, or a tightly restricted enterprise control plane.</p>
                 <p>As of early 2026, that architectural layer has become the real differentiator.</p>
                 <p>The shift is significant. The industry has moved beyond simple JSON function calling and server side chatbot APIs. Frontier models now sit inside systems that can discover tools dynamically, orchestrate remote MCP servers, write code to call APIs, operate terminals, browse the web, or interact with graphical interfaces. Some architectures optimise for managed state and provider hosted execution. Others optimise for inter agent interoperability. Others optimise for local execution, strict sandboxing, and extreme context efficiency.</p>
-                <p>If you want to understand how to use these systems properly, the right question is no longer just <em>which model is best</em>. The better question is: <em>what harness is this model running inside, where do the tools execute, how is state handled, and what security boundary actually exists around the task?</em></p>
+                <p>The question is no longer just <em>which model is best</em>. The better question is: <em>what harness is this model running inside, where do the tools execute, how is state handled, and what security boundary actually exists around the task?</em></p>
                 <p>That is the real architecture of modern agent systems.</p>
                 <h2>The mental model: what an agent harness actually is</h2>
                 <p>An agent harness is the runtime environment that surrounds the model and translates reasoning into action.</p>
                 <p>At minimum, the harness usually contains:</p>
                 <ol>
-                <li>a model interface</li>
-                <li>a tool registry</li>
-                <li>an orchestration layer</li>
-                <li>an execution runtime</li>
-                <li>a state or memory layer</li>
-                <li>a policy and approval layer</li>
-                <li>an observation loop for receiving tool output and continuing execution</li>
+                <li>model interface</li>
+                <li>tool registry</li>
+                <li>orchestration layer</li>
+                <li>execution runtime</li>
+                <li>state or memory layer</li>
+                <li>policy and approval layer</li>
+                <li>observation loop for receiving tool output and continuing execution</li>
                 </ol>
                 <p>The model itself does not run a terminal, open a browser, authenticate to an API, or edit a file. It emits structured intent. The harness turns that intent into real execution.</p>
                 <p>That distinction matters because it defines the trust boundary.</p>
@@ -159,15 +159,15 @@
                 <p>This is the environment where the work actually happens.</p>
                 <p>That may be:</p>
                 <ul>
-                <li>a provider hosted container</li>
-                <li>a local Docker or Podman runtime</li>
-                <li>a Unix shell</li>
-                <li>a gVisor isolated environment</li>
-                <li>a macOS Seatbelt process</li>
-                <li>a Bubblewrap sandbox</li>
-                <li>a cloud VM</li>
-                <li>a local CLI process</li>
-                <li>a remote agent reachable over HTTP and SSE</li>
+                <li>provider hosted container</li>
+                <li>local Docker or Podman runtime</li>
+                <li>Unix shell</li>
+                <li>gVisor isolated environment</li>
+                <li>macOS Seatbelt process</li>
+                <li>Bubblewrap sandbox</li>
+                <li>cloud VM</li>
+                <li>local CLI process</li>
+                <li>remote agent reachable over HTTP and SSE</li>
                 </ul>
                 <p>The execution runtime is not just an implementation detail. It determines what the model can touch, what data it can access, and how much damage a compromised workflow can do.</p>
                 <h3>5. State and memory</h3>
@@ -203,12 +203,7 @@
                 <ul>
                 <li>JSON from a REST call</li>
                 <li>shell stdout and stderr</li>
-                <li>a screenshot</li>
-                <li>a DOM snapshot</li>
-                <li>a file diff</li>
-                <li>a filtered summary</li>
-                <li>a generated artifact</li>
-                <li>a structured task state from another agent</li>
+                <li>screenshot, DOM snapshot, file diff, generated artifact, or structured task state from another agent</li>
                 </ul>
                 <p>The quality of this observation loop strongly influences agent performance. Poorly shaped tool output pollutes context and increases token costs. Good harnesses reduce and structure the output before it returns to the model.</p>
                 <p>That is one reason the major providers have moved beyond simple function calling into richer orchestration designs.</p>
