@@ -7,6 +7,14 @@
     <language>en-gb</language>
 
     <item>
+      <title>Agent Harnesses, Skills, and Tool Runtimes: The Architecture of Frontier Models</title>
+      <link>https://lucaslinkowski.com/blog/agent-harnesses-skills-and-frontier-model-architecture.html</link>
+      <description>A long form guide to agent harnesses, skills, MCP servers, tool runtimes, and the system design choices that turn frontier models into real task systems.</description>
+      <pubDate>Tue, 28 Apr 2026 09:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/agent-harnesses-skills-and-frontier-model-architecture.html</guid>
+    </item>
+
+    <item>
       <title>The Evolution of Social Engineering: Weaponizing Web Lures Against Agentic AI</title>
       <link>https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html</link>
       <description>How cybercriminals are adapting SocGholish and ClickFix campaigns to target autonomous AI agents through Indirect Prompt Injection and the Parallel-Poisoned Web.</description>

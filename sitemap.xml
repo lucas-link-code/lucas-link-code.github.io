@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lucaslinkowski.com/</loc>
-        <lastmod>2026-03-30</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/blog.html</loc>
-        <lastmod>2026-03-30</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -21,8 +21,13 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://lucaslinkowski.com/blog/agent-harnesses-skills-and-frontier-model-architecture.html</loc>
+        <lastmod>2026-04-28</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://lucaslinkowski.com/blog/weaponizing-web-lures-against-agentic-ai.html</loc>
-        <lastmod>2026-03-30</lastmod>
+        <lastmod>2026-05-01</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
