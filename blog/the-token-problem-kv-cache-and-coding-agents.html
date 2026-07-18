@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Token Problem: KV Cache, Prefill Cost, and Coding Agents | Lucas Linkowski</title>
+    <meta name="description" content="Why a short prompt can still burn a full context window: how KV cache, prefill, decode, and multi-turn agent harnesses drive token cost, GPU memory pressure, and usage-based pricing.">
+    <meta name="author" content="Lucas Linkowski">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://lucaslinkowski.com/blog/the-token-problem-kv-cache-and-coding-agents.html">
+    <meta property="og:title" content="The Token Problem: KV Cache, Prefill Cost, and Coding Agents | Lucas Linkowski">
+    <meta property="og:description" content="How KV cache and multi-turn agent loops turn a short user prompt into a large bill, and why coding agents amplify the problem.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lucaslinkowski.com/blog/the-token-problem-kv-cache-and-coding-agents.html">
+    <meta property="og:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta property="og:site_name" content="Lucas Linkowski">
+    <meta property="og:image:alt" content="The Token Problem: KV Cache, Prefill Cost, and Coding Agents">
+    <meta property="article:published_time" content="2026-07-18T16:00:00Z">
+    <meta property="article:modified_time" content="2026-07-18T16:00:00Z">
+    <meta property="article:author" content="Lucas Linkowski">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Token Problem: KV Cache, Prefill Cost, and Coding Agents | Lucas Linkowski">
+    <meta name="twitter:description" content="How KV cache and multi-turn agent loops turn a short user prompt into a large bill, and why coding agents amplify the problem.">
+    <meta name="twitter:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta name="twitter:image:alt" content="The Token Problem: KV Cache, Prefill Cost, and Coding Agents">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The Token Problem: KV Cache, Prefill Cost, and Coding Agents",
+        "description": "Why a short prompt can still burn a full context window: how KV cache, prefill, decode, and multi-turn agent harnesses drive token cost, GPU memory pressure, and usage-based pricing.",
+        "datePublished": "2026-07-18T16:00:00Z",
+        "dateModified": "2026-07-18T16:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "mainEntityOfPage": "https://lucaslinkowski.com/blog/the-token-problem-kv-cache-and-coding-agents.html"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#home-anchor">Home</a></li>
+                <li><a href="../index.html#expertise">Expertise</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#malware-news">Malware News</a></li>
+                <li><a href="../index.html#arsenal">Arsenal</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../gallery.html">Gallery</a></li>
+                <li><a href="../index.html#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="article-page" id="main-content">
+        <article class="container">
+            <a href="../blog.html" class="article-eyebrow">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8L10 13"/></svg>
+                Back to writing
+            </a>
+
+            <header class="article-header">
+                <span class="blog-tag">GenAI</span>
+                <h1 class="article-title">The Token Problem: KV Cache, Prefill Cost, and Coding Agents</h1>
+                <div class="article-meta">
+                    <time datetime="2026-07-18">July 2026</time>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <span>10 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+                <p>Ever wondered why a 500 token prompt returned two paragraphs of text and you still got charged for something closer to a 128K context? I did. Looking under the hood of how frontier models actually run shows a structural constraint that is easy to miss from the chat UI: these systems do not hold working memory the way humans do.</p>
+
+                <p>When you chat with an LLM, the model does not keep a private, durable thought state between tokens. Its active context is reconstructed through attention over a Key Value cache, commonly called the KV cache. In practical terms, the model must re-engage the relevant history, system instructions, tool output, and loaded files as it produces each next token. If that sounds inefficient, that is because it is. We often talk as if models are thinking the way we do. They are producing helpful output. That is not the same as having a human style working memory.</p>
+
+                <p>That distinction matters more now than it did in early chatbot days. Coding agents, long context windows, and hidden reasoning traces all expand the amount of state that has to be carried, reloaded, or recomputed. The bill follows the architecture.</p>
+
+                <h2>Prefill and decode: two different bottlenecks</h2>
+
+                <p>Inference has two dominant phases.</p>
+
+                <p>The first is prefill. The model reads the prompt, builds attention state, and fills the KV cache. The compute cost of attention grows steeply with sequence length. A long system prompt, a large repository slice, or a long chat history makes this phase expensive before the first output token appears.</p>
+
+                <p>The second is decode. Tokens are written one by one. For each new token, the runtime has to keep model weights and the growing KV cache available in GPU memory. For a roughly 70 billion parameter model, weight storage alone can sit in the order of 140 GB depending on precision. Add a long KV cache on top of that and memory becomes the scarce resource.</p>
+
+                <p>That is why expensive accelerators often look underutilised during generation. They are not always waiting on more FLOPs. They are waiting on memory bandwidth while weights and cache state move through the system. This also helps explain recurring headlines about high end memory scarcity and the energy cost of serving large models at scale. Serving is not only training. Decode traffic is continuous and memory heavy.</p>
+
+                <h2>The KV cache grows with the conversation</h2>
+
+                <p>KV cache size scales with context length and with how many concurrent sessions the provider keeps warm. A simple way to see the pressure: for a large model, holding long contexts for even a small number of concurrent users can consume hundreds of gigabytes of GPU memory. Illustratively, keeping around 128K tokens of active context for roughly ten concurrent sessions on a 70B class model can push into the hundreds of gigabytes of memory for cache alone, before counting weights, overhead, and fragmentation. That is multiple top tier cards just to hold active session state.</p>
+
+                <p>Hidden reasoning makes this worse. When a model is configured to think before it answers, it may emit thousands of intermediate tokens. Those tokens enter the active sequence. Each additional token expands the work on the next step. The loop is not free. It is paid for in latency, memory, and metered tokens.</p>
+
+                <h2>Why coding agents amplify the cost</h2>
+
+                <p>This becomes a financial and operational problem once you leave single turn chat and enter agent harnesses.</p>
+
+                <p>A coding agent does not only write code. The harness reads repository files, runs tests, calls tools, and feeds results back into the model. Every action can reintroduce file contents, diffs, stack traces, and prior tool output into the prompt path. Shared prefixes may be cached for a while. New observations usually are not free.</p>
+
+                <p>On agent software construction benchmarks such as ProjDevBench style evaluations, published figures in this space often land around 100 plus turns and millions of tokens per task. One commonly cited shape of result is on the order of 138 turns and roughly 4.81 million tokens per task. Run hundreds of those tasks a day and the organisation is repeatedly paying to re ingest overlapping context across loops.</p>
+
+                <p>There is also a trust question that operators should ask more often: how exactly are tokens counted across cached prefixes, tool payloads, reasoning traces, and retries? Users see a short final answer. Billing sees the full execution trace. Those are not the same object.</p>
+
+                <h2>Warm state is scarce, so idle sessions get cold</h2>
+
+                <p>Providers try to keep calculated KV state in GPU memory so they do not repeat full prefill for every message. That memory is expensive and contended. Cloud fleets serve many users. Warm session state often has a short lifetime.</p>
+
+                <p>If a developer pauses for a few minutes to think, their saved state may be evicted to make room for someone else. The next message can force a fresh prefill over a large history. From the product surface this looks like chat continuity. From the serving stack it can look like starting over.</p>
+
+                <p>For a long time, some frontier products absorbed much of that cost inside flat subscriptions. That era is ending. Usage based credits, rate limits, and explicit token metering are becoming the default because the hardware economics finally show up in the invoice.</p>
+
+                <h2>What to do until the architecture changes</h2>
+
+                <p>Until systems move further away from repeatedly expanding and replaying large active contexts, large generative agents will remain slower and more expensive than the chat UI suggests.</p>
+
+                <p>For real engineering work, that has practical consequences:</p>
+
+                <ul>
+                    <li>Keep context deliberate. Load only the files and traces the current step needs.</li>
+                    <li>Prefer short loops with clear state outside the model over dumping the whole repo into every turn.</li>
+                    <li>Treat harness design as cost control. Tool output shaping and memory policy matter as much as model choice.</li>
+                    <li>Use small, local autocomplete tools when the job is narrow completion rather than multi step agency.</li>
+                </ul>
+
+                <p>I wrote a related set of token management practices earlier on LLM ThreatIntel: <a href="https://llm-threatintel.com/#blog/2026-05-25-claude-code-token-economics-context-window-discipline" rel="noopener noreferrer">Claude Code token economics and context window discipline</a>.</p>
+
+                <p>There is also a useful distinction between intelligence and intelligent looking output. A clear Computerphile explanation of that gap is worth watching: <a href="https://www.youtube.com/watch?v=-0HRzXk8vlk" rel="noopener noreferrer">Computerphile on AI and understanding</a>.</p>
+
+                <h2>Takeaway</h2>
+
+                <p>The model is not secretly holding your project in a durable internal notebook. It is operating over an attention based cache that grows with every useful bit of context you give it, every tool result the harness returns, and every hidden reasoning token the system chooses to keep.</p>
+
+                <p>That is why a short looking prompt can still cost a long context. The architecture is doing exactly what it was built to do. The invoice is just catching up.</p>
+            </div>
+
+            <footer class="article-footer">
+                <div class="share-links">
+                    <button class="share-btn" data-share="linkedin">Share on LinkedIn</button>
+                    <button class="share-btn" data-share="twitter">Share on X</button>
+                </div>
+                <nav class="article-nav" aria-label="Post navigation">
+                    <a href="agent-harnesses-skills-and-frontier-model-architecture.html" class="article-nav-link article-nav-prev">
+                        <span class="article-nav-dir">&larr; Previous</span>
+                        <span class="article-nav-title">Agent Harnesses and Frontier Model Architecture</span>
+                    </a>
+                    <span></span>
+                </nav>
+                <div class="article-footer-back">
+                    <a href="../blog.html" class="btn btn-outline">&larr; Back to writing</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="container footer-container">
+            <a class="footer-name" href="mailto:contact@lucaslinkowski.com">Lucas Linkowski</a>
+            <span class="footer-location">Based in Wales, UK</span>
+            <span class="footer-support"><a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">Support me</a></span>
+            <span class="footer-copy">&copy; 2026 All rights reserved.</span>
+        </div>
+        <p class="site-disclaimer site-disclaimer--footer">Independent personal website. Views, writing, code, and research are my own and do not represent any employer.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
