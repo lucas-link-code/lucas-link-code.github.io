@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lucaslinkowski.com/</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-08-06</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/blog.html</loc>
-        <lastmod>2026-07-18</lastmod>
+        <lastmod>2026-08-06</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -21,13 +21,38 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://lucaslinkowski.com/blog/speak-llm-common-language-agent-workflows.html</loc>
+        <lastmod>2026-08-06</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://lucaslinkowski.com/blog/the-token-problem-kv-cache-and-coding-agents.html</loc>
         <lastmod>2026-07-18</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://lucaslinkowski.com/blog/prompt-smarter-llm-insights-enhanced-outcomes.html</loc>
+        <lastmod>2026-06-29</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/claude-code-token-discipline-agentic-cli-workflows.html</loc>
+        <lastmod>2026-05-25</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/claude-code-token-economics-context-window-discipline.html</loc>
+        <lastmod>2026-05-25</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://lucaslinkowski.com/blog/agent-harnesses-skills-and-frontier-model-architecture.html</loc>
         <lastmod>2026-07-18</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/zero-day-gold-rush-dwell-time-ai-defense.html</loc>
+        <lastmod>2026-04-07</lastmod>
         <priority>0.7</priority>
     </url>
     <url>

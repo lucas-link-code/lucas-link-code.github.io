@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak LLM: A Practical Glossary for Better Agent Outcomes | Lucas Linkowski</title>
+    <meta name="description" content="A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path. The post explains why precise vocabulary improves outcomes, and gives ready-to-paste...">
+    <meta name="author" content="Lucas Linkowski">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://lucaslinkowski.com/blog/speak-llm-common-language-agent-workflows.html">
+    <meta property="og:title" content="Speak LLM: A Practical Glossary for Better Agent Outcomes | Lucas Linkowski">
+    <meta property="og:description" content="A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path. The post explains why precise vocabulary improves outcomes, and gives ready-to-paste...">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://lucaslinkowski.com/blog/speak-llm-common-language-agent-workflows.html">
+    <meta property="og:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta property="og:site_name" content="Lucas Linkowski">
+    <meta property="og:image:alt" content="Speak LLM: A Practical Glossary for Better Agent Outcomes">
+    <meta property="article:published_time" content="2026-08-06T12:00:00Z">
+    <meta property="article:modified_time" content="2026-08-06T12:00:00Z">
+    <meta property="article:author" content="Lucas Linkowski">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speak LLM: A Practical Glossary for Better Agent Outcomes | Lucas Linkowski">
+    <meta name="twitter:description" content="A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path. The post explains why precise vocabulary improves outcomes, and gives ready-to-paste...">
+    <meta name="twitter:image" content="https://lucaslinkowski.com/assets/images/hero.jpg">
+    <meta name="twitter:image:alt" content="Speak LLM: A Practical Glossary for Better Agent Outcomes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Speak LLM: A Practical Glossary for Better Agent Outcomes",
+        "description": "A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path. The post explains why precise vocabulary improves outcomes, and gives ready-to-paste...",
+        "datePublished": "2026-08-06T12:00:00Z",
+        "dateModified": "2026-08-06T12:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Lucas Linkowski",
+            "url": "https://lucaslinkowski.com/"
+        },
+        "mainEntityOfPage": "https://lucaslinkowski.com/blog/speak-llm-common-language-agent-workflows.html"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-nav">Skip to content</a>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">Lucas<span class="logo-dot">.</span>Linkowski</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#home-anchor">Home</a></li>
+                <li><a href="../index.html#expertise">Expertise</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#malware-news">Malware News</a></li>
+                <li><a href="../index.html#arsenal">Arsenal</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+                <li><a href="../gallery.html">Gallery</a></li>
+                <li><a href="../index.html#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="article-page" id="main-content">
+        <article class="container">
+            <a href="../blog.html" class="article-eyebrow">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8L10 13"/></svg>
+                Back to writing
+            </a>
+
+            <header class="article-header">
+                <span class="blog-tag">GenAI</span>
+                <h1 class="article-title">Speak LLM: A Practical Glossary for Better Agent Outcomes</h1>
+                <div class="article-meta">
+                    <time datetime="2026-08-06">August 2026</time>
+                    <span class="meta-sep" aria-hidden="true"></span>
+                    <span>14 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+                <p>Working with coding agents and chat models is not only about context and prompts. Language matters too, vocabulary to be specific. A large share of bad outcomes comes from vague instructions.</p>
+
+                <p>As security analysts and engineers we already use dense acronyms and abbreviations for IOC, TDS, SSRF, FP false positive. Agent workflows have their own shorthands too. It's worth learning it, we talk to that software increasingly more.</p>
+
+                <p>Here is how you can steer the models with fewer words and less rework. This post is a field guide to LLM's language. It covers meaning of useful phrases, why they change behaviour, and ready to paste asks you can use in Codex, ChatGPT, Cursor, Claude Code, or any other agentic harness.</p>
+
+                <h2>Why vocabulary changes outcomes</h2>
+
+                <p>Models respond to constraints more reliably than to vague instructions.</p>
+
+                <p>If you say "test it", the model may run one check, and do nothing useful. If you say "smoke test the main entrypoint, then run the regression harness", the target is clear: one shallow live check, then a structured comparison against known good output.</p>
+
+                <p>If you say "fix it carefully", the model may refactor half the module. If you say "minimal additive fix, small blast radius, do not change the public interface", the edit stays narrow.</p>
+
+                <p>The phrases below are examples of compressed and focused expressions models are trained to understand. Used well, they reduce ambiguity in the same way precise malware family names reduce ambiguity in intel work.</p>
+
+                <h2>Core operating modes</h2>
+
+                <p>These phrases set the rules of engagement before the task starts.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Read-only</td><td>Inspect and report. Do not edit files.</td><td>"Read-only pass. Do not change any code."</td></tr><tr><td>Plan first</td><td>Design before coding. Wait for approval.</td><td>"Make a plan. Wait for my approval before editing."</td></tr><tr><td>Implement</td><td>Make the changes now.</td><td>"Implement the plan as specified."</td></tr><tr><td>Out of scope</td><td>Explicitly do not touch this area.</td><td>"Out of scope: parser, exporter, batch mode."</td></tr><tr><td>In scope</td><td>Must cover this.</td><td>"In scope: quiet mode and JSON output only."</td></tr><tr><td>Blast radius</td><td>How much else a change could affect.</td><td>"Keep blast radius small."</td></tr><tr><td>Additive</td><td>Add behaviour. Do not rewrite existing paths.</td><td>"Additive only. Do not rename return fields."</td></tr><tr><td>Narrow fix / minimal fix</td><td>Smallest change that solves the bug.</td><td>"Minimal fix. No refactor."</td></tr><tr><td>Follow-up</td><td>Extra work after the main result.</td><td>"Any follow-ups needed?"</td></tr><tr><td>Cleanup</td><td>Stop leftover processes and temp artifacts.</td><td>"Cleanup background processes when done."</td></tr></tbody>
+                </table>
+
+                <p>Example ask:</p>
+
+                <pre><code>Read-only pass.
+Root cause for why the export file is not created when results are empty.
+No fixes.
+Concise verdict first.</code></pre>
+
+                <h2>Testing language</h2>
+
+                <p>Testing phrases tell the model how deep to go and what "done" means.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Smoke test</td><td>Tiny sanity check that the system is alive.</td><td>"Do a smoke test: start the tool, run one sample input."</td></tr><tr><td>Thorough pass</td><td>Broad coverage across flags and options.</td><td>"Thorough pass of all CLI flags and config options."</td></tr><tr><td>Spot check</td><td>Quick look at a few important cases.</td><td>"Spot check one empty result and one hit result."</td></tr><tr><td>Matrix</td><td>Grid of combinations to run.</td><td>"Run a flag matrix for timeout and recurse."</td></tr><tr><td>Happy path</td><td>Normal successful use.</td><td>"Verify the happy path still works."</td></tr><tr><td>Edge case</td><td>Unusual but valid input.</td><td>"Cover edge cases: empty body, denied response, redirects."</td></tr><tr><td>Negative path</td><td>Bad input on purpose.</td><td>"Negative path: bad auth token, unsupported scheme, broken JSON."</td></tr><tr><td>Regression</td><td>Something that used to work and now fails.</td><td>"Check for regressions against the baseline."</td></tr><tr><td>Diff / drift</td><td>Difference from expected output.</td><td>"Diff against baseline. Report any drift."</td></tr><tr><td>Gate / verification gate</td><td>Check that must pass before continuing.</td><td>"Verification gate: baseline_check must pass."</td></tr><tr><td>Harness</td><td>Scripts that drive the tool and compare results.</td><td>"Run the fixture harness."</td></tr><tr><td>Baseline</td><td>Saved known-good output for later comparison.</td><td>"Compare to baseline before claiming success."</td></tr><tr><td>Fixture</td><td>Controlled fake site or sample data for tests.</td><td>"Test against the local fixture data."</td></tr><tr><td>PASS / FAIL</td><td>Result of one check.</td><td>"Report a PASS/FAIL matrix. Do not fix."</td></tr><tr><td>Flaky</td><td>Passes sometimes, fails sometimes.</td><td>"Is that check flaky?"</td></tr></tbody>
+                </table>
+
+                <p>Smoke test deserves a plain English explanation. The term comes from hardware: power the device on and see if smoke comes out. In software it means a short check after a change. Not exhaustive. Just: does the main path still respond.</p>
+
+                <p>Example asks:</p>
+
+                <pre><code>Thorough pass of the CLI and config options.
+Read-only.
+Report PASS/FAIL.
+Do not fix anything.</code></pre>
+
+                <pre><code>After the fix:
+1. Smoke test the main entrypoint
+2. Run the regression harness
+3. Spot check one empty result and one hit result</code></pre>
+
+                <h2>Change and design language</h2>
+
+                <p>Use these when you want controlled edits instead of opportunistic rewrites.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Wire / wired</td><td>A flag is parsed and actually used by runtime code.</td><td>"Is --depth wired, or parsed and ignored?"</td></tr><tr><td>Surface</td><td>Public options and fields callers can see.</td><td>"Document the full public interface."</td></tr><tr><td>Contract</td><td>Agreed shape of inputs and outputs.</td><td>"Do not break the public interface contract."</td></tr><tr><td>Schema</td><td>Structure of JSON or records.</td><td>"Did the output schema change?"</td></tr><tr><td>Side effect</td><td>Extra behaviour change beyond the goal.</td><td>"List side effects before implementing."</td></tr><tr><td>Breaking change</td><td>Existing clients must update.</td><td>"Call out any breaking change."</td></tr><tr><td>Backwards compatible</td><td>Old clients still work.</td><td>"Keep it backwards compatible."</td></tr><tr><td>Idempotent</td><td>Doing it twice equals doing it once.</td><td>"Make the export idempotent."</td></tr><tr><td>Dead code / dead rule</td><td>Present but never executes.</td><td>"Is that pattern dead at load time?"</td></tr><tr><td>Stub</td><td>Minimal placeholder output or record.</td><td>"Write a clean stub into the export file."</td></tr><tr><td>Gate behind a flag</td><td>Feature stays off unless a flag enables it.</td><td>"Gate local targets behind --allow-local."</td></tr><tr><td>Default</td><td>Value used when the option is omitted.</td><td>"What is the default for timeout?"</td></tr><tr><td>Override</td><td>Per-request value wins over startup default.</td><td>"Can the request override startup defaults?"</td></tr><tr><td>Coerce</td><td>Convert a value into the expected type.</td><td>"Coerce string true/false to bool."</td></tr><tr><td>Clamp</td><td>Force a number into a min/max range.</td><td>"Clamp timeout to 1 to 300."</td></tr><tr><td>Defang</td><td>Make URLs and IPs safe to display.</td><td>"Defang by default. Option to disable."</td></tr><tr><td>Normalize</td><td>Standardize messy input into a canonical form.</td><td>"Normalize hostnames to full URLs."</td></tr></tbody>
+                </table>
+
+                <p>Example ask:</p>
+
+                <pre><code>Plan a minimal fix for the two CLI output bugs.
+Small blast radius.
+Additive if possible.
+Do not change parsing or export behaviour.
+Think through side effects, then wait for approval.</code></pre>
+
+                <h2>Debugging and security language</h2>
+
+                <p>These phrases keep investigation honest and scoped.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Root cause</td><td>The real reason it fails.</td><td>"Root cause only. No speculative fixes yet."</td></tr><tr><td>Symptom</td><td>What you observe, not why.</td><td>"That is a symptom. Find the root cause."</td></tr><tr><td>Repro</td><td>Exact steps that recreate the bug.</td><td>"Give me a repro command."</td></tr><tr><td>Intermittent</td><td>Not reproducible every run.</td><td>"Is it intermittent?"</td></tr><tr><td>False positive</td><td>Alert on benign activity.</td><td>"Too many false positives on the sample corpus."</td></tr><tr><td>False negative</td><td>Missed real malicious activity.</td><td>"Any false negatives from the size cap?"</td></tr><tr><td>Noise</td><td>Low-value alerts that bury signal.</td><td>"Reduce noise from low confidence rules."</td></tr><tr><td>Coverage</td><td>How much of the attack surface you actually check.</td><td>"Does recurse improve coverage?"</td></tr><tr><td>SSRF</td><td>Tricking a server into fetching internal hosts.</td><td>"Confirm private destinations are blocked on every hop."</td></tr><tr><td>ReDoS</td><td>Regex that can hang via catastrophic backtracking.</td><td>"Any ReDoS risk in that pattern?"</td></tr><tr><td>TOCTOU</td><td>Time of check versus time of use race.</td><td>"Document the resolve then connect limitation."</td></tr><tr><td>Validate / sanitize</td><td>Reject or clean unsafe input.</td><td>"Validate URL scheme before fetch."</td></tr><tr><td>Auth asymmetry</td><td>Some routes need auth, some do not.</td><td>"Document auth asymmetry for status check vs action route."</td></tr></tbody>
+                </table>
+
+                <p>Example ask:</p>
+
+                <pre><code>Read-only.
+Root cause for quiet mode emptying JSON stdout.
+Include the exact code path.
+No edits.</code></pre>
+
+                <h2>Process language for agent sessions</h2>
+
+                <p>Agent harnesses work better when you define the workflow explicitly.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Pass / round</td><td>One cycle of work.</td><td>"Do a read-only pass first."</td></tr><tr><td>Plan</td><td>Written approach before edits.</td><td>"Build a solid plan. Give it a second pass for side effects."</td></tr><tr><td>Approval</td><td>Human must confirm before edits.</td><td>"Wait for approval before changing code."</td></tr><tr><td>Implement the plan</td><td>Execute the written plan, nothing else.</td><td>"Implement the plan as specified. Do not edit the plan file."</td></tr><tr><td>Mark todos</td><td>Track progress against a checklist.</td><td>"Mark todos in_progress as you work."</td></tr><tr><td>Do not stop until</td><td>Finish the whole checklist.</td><td>"Do not stop until all todos are completed."</td></tr><tr><td>Concise</td><td>Short answer.</td><td>"Be concise. No filler."</td></tr><tr><td>High density</td><td>Maximum facts, few words.</td><td>"High density technical notes."</td></tr><tr><td>Verdict</td><td>Bottom-line result up front.</td><td>"Start with the verdict."</td></tr><tr><td>No extras</td><td>Do not expand scope.</td><td>"No extras. No drive-by refactors."</td></tr></tbody>
+                </table>
+
+                <p>Example ask:</p>
+
+                <pre><code>Implement the plan as specified.
+Do not edit the plan file.
+Mark todos as you go.
+Verify with smoke + harness.
+No extras.</code></pre>
+
+                <h2>Runtime and operations language</h2>
+
+                <p>Useful when the agent starts services, runs tools, or pipes output.</p>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Background</td><td>Keep a process running while other work continues.</td><td>"Start the local service in the background."</td></tr><tr><td>Port</td><td>TCP listen number such as 3000.</td><td>"Bind the service to the configured port."</td></tr><tr><td>Bind</td><td>Address the service listens on.</td><td>"Bind to 127.0.0.1 only."</td></tr><tr><td>Localhost / loopback</td><td>This machine only.</td><td>"Block loopback unless --allow-local."</td></tr><tr><td>Timeout</td><td>Abort after N seconds.</td><td>"Use timeout 10 for batch runs."</td></tr><tr><td>Proxy</td><td>Send traffic through another host.</td><td>"Negative path: unreachable proxy, no traceback."</td></tr><tr><td>Exit code</td><td>Process return status. 0 usually means success.</td><td>"Confirm exit code 0. 143 means we killed it on purpose."</td></tr><tr><td>Stdout / stderr</td><td>Normal output stream versus diagnostics stream.</td><td>"JSON on stdout. Warnings on stderr."</td></tr><tr><td>Pipe</td><td>Chain one command into another.</td><td>"Pipe quiet JSON output into a JSON parse check."</td></tr></tbody>
+                </table>
+
+                <h2>Performance language</h2>
+
+                <table class="article-table">
+                <thead><tr><th>Phrase</th><th>Meaning</th><th>Say this</th></tr></thead>
+                <tbody><tr><td>Bottleneck</td><td>The slowest part of the path.</td><td>"Where is the bottleneck?"</td></tr><tr><td>Cap / ceiling</td><td>Hard upper limit.</td><td>"Keep the content size cap."</td></tr><tr><td>Truncate</td><td>Cut content that exceeds a limit.</td><td>"Report truncated true when capped."</td></tr><tr><td>Cache</td><td>Reuse expensive work.</td><td>"Cache decoded content per item."</td></tr><tr><td>Precompile</td><td>Compile once at load, reuse later.</td><td>"Precompile patterns at startup."</td></tr><tr><td>Throughput</td><td>How many jobs per unit time.</td><td>"Optimise for throughput on the sample corpus."</td></tr><tr><td>Latency</td><td>Time for one request.</td><td>"Keep batch latency low."</td></tr><tr><td>Lever</td><td>A dial that trades speed for coverage.</td><td>"Which lever helps most: skip recurse or size cap?"</td></tr></tbody>
+                </table>
+
+                <p>Example ask:</p>
+
+                <pre><code>Read-only.
+Find the matching bottleneck.
+Measure before proposing a fix.
+No code changes yet.</code></pre>
+
+                <h2>Phrases people say that are too vague</h2>
+
+                <table class="article-table">
+                <thead><tr><th>Vague ask</th><th>Clearer ask</th></tr></thead>
+                <tbody><tr><td>Test it</td><td>Smoke test the main entrypoint, or thorough pass of all flags</td></tr><tr><td>Check everything</td><td>Matrix of CLI flags and config options. Report PASS/FAIL</td></tr><tr><td>Make sure nothing broke</td><td>Regression check against baseline. Run the harness</td></tr><tr><td>Quick look</td><td>Spot check or smoke test</td></tr><tr><td>Fix it carefully</td><td>Minimal fix, small blast radius, additive if possible</td></tr><tr><td>Don't change other stuff</td><td>Out of scope: parser, exporter, batch mode</td></tr><tr><td>Is it working?</td><td>Happy path smoke: start the tool and run one sample</td></tr><tr><td>Test bad stuff</td><td>Negative path: bad auth, unsupported scheme, broken JSON</td></tr><tr><td>Optimize it</td><td>Find the bottleneck, measure, propose one lever</td></tr><tr><td>Clean this up</td><td>Narrow refactor with explicit file list, or leave it out of scope</td></tr></tbody>
+                </table>
+
+                <h2>Ready-to-paste templates</h2>
+
+                <h3>Investigate</h3>
+
+                <pre><code>Read-only.
+Root cause for &lt;problem&gt;.
+No fixes.
+Verdict first, then evidence.</code></pre>
+
+                <h3>Plan</h3>
+
+                <pre><code>Make a plan to fix &lt;problem&gt;.
+Small blast radius.
+Think through side effects on existing modules.
+Wait for my approval before implementing.</code></pre>
+
+                <h3>Implement</h3>
+
+                <pre><code>Implement the plan as specified.
+Do not edit the plan file.
+Mark todos in_progress as you work.
+Do not stop until all todos are completed.
+Verify with smoke + harness.
+No extras.</code></pre>
+
+                <h3>Test without fixing</h3>
+
+                <pre><code>Thorough pass of all CLI flags and config options.
+Read-only.
+Report a PASS/FAIL matrix.
+Do not fix issues. Propose a plan only if asked.</code></pre>
+
+                <h3>Safe change</h3>
+
+                <pre><code>Minimal additive fix.
+Do not change the public interface contract.
+Run the regression gate after.
+Report side effects explicitly.</code></pre>
+
+                <h3>Security review</h3>
+
+                <pre><code>Read-only security pass.
+Check private destination controls, auth, and input validation.
+List findings by severity.
+No code changes.</code></pre>
+
+                <h3>Performance</h3>
+
+                <pre><code>Read-only.
+Identify the bottleneck.
+Measure before and after candidates if you propose a fix.
+Prefer the smallest lever that recovers most latency.</code></pre>
+
+                <h3>Docs</h3>
+
+                <pre><code>Update docs to match actual behaviour.
+Direct technical tone.
+No marketing language.
+High density.</code></pre>
+
+                <h2>Mini dialogues</h2>
+
+                <p>Vague:</p>
+
+                <pre><code>You: Can you check the auth module?
+Model: Starts changing code, or runs one random request, or both.</code></pre>
+
+                <p>Precise:</p>
+
+                <pre><code>You: Read-only thorough pass of the CLI and config options.
+Report PASS/FAIL.
+Do not fix.
+
+Model: Runs auth, validation, option coercion, private destination checks, happy path.
+Returns a matrix. No edits.</code></pre>
+
+                <p>Vague:</p>
+
+                <pre><code>You: Fix the output bugs carefully.
+Model: Refactors printers, quiet mode, reports, and maybe the exporter.</code></pre>
+
+                <p>Precise:</p>
+
+                <pre><code>You: Two failures only:
+1. quiet mode empties JSON stdout
+2. export file missing when results are empty
+Minimal fix. Small blast radius.
+Do not change parsing or export behaviour.
+Plan first for approval.</code></pre>
+
+                <h2>How to adopt this without overdoing it</h2>
+
+                <p>You do not need every term in every prompt.</p>
+
+                <p>Use three layers:</p>
+
+                <ol>
+
+                <li>Mode: read-only, plan, or implement</li>
+
+                <li>Scope: in scope and out of scope</li>
+
+                <li>Proof: smoke, harness, matrix, or repro</li>
+
+                </ol>
+
+                <p>That alone removes most ambiguity.</p>
+
+                <p>Then add domain terms when the task needs them: SSRF, regression, contract, blast radius, defang, coerce, clamp.</p>
+
+                <p>If the model drifts, do not argue with it in prose. Reset the operating rules:</p>
+
+                <pre><code>Stop.
+You are outside scope.
+Return to the plan.
+No extras.
+Show the verification commands you will run.</code></pre>
+
+                <h2>One takeaway</h2>
+
+                <p>Better agent outcomes can result from better communication, not just bigger models. Here is my own example I paste into a prompt when I want a small fix without the risk of model destroying my own code. I always worry that because I write code differently, much differently than LLMs, agent may start to refactor my function immediately because its not in their style of writing. So I enter this:</p>
+
+                <pre><code>Make sure the plan includes checks for regressions. Keep blast radius small.
+Do a thorough pass and a smoke test of all features. Make it additive.
+Do not change unnecessary functions. Minimal fix. Do not refactor.
+Plan should include testing and checks for regressions against the baseline.</code></pre>
+
+                <p>You may have noticed, I always ask to create a plan first! Then I review it carefully. I like to add this as well in my very own simple words:</p>
+
+                <pre><code>Once written, look at your plan and think through it again,
+give it another pass to consider any possible implications it may have on existing modules and dependencies.
+I don't want anything to break or to be negatively affected by this implementation.</code></pre>
+
+                <p>Learn a small set of these phrases, reuse the templates, and your sessions get shorter, cheaper, and more reliable. Always give it mode, scope, constraints, and a definition of done.</p>
+
+            </div>
+
+            <footer class="article-footer">
+                <div class="share-links">
+                    <button class="share-btn" data-share="linkedin">Share on LinkedIn</button>
+                    <button class="share-btn" data-share="twitter">Share on X</button>
+                </div>
+                <nav class="article-nav" aria-label="Post navigation">
+                    <a href="the-token-problem-kv-cache-and-coding-agents.html" class="article-nav-link article-nav-prev">
+                        <span class="article-nav-dir">&larr; Previous</span>
+                        <span class="article-nav-title">The Token Problem</span>
+                    </a>
+                    <span></span>
+                </nav>
+                <div class="article-footer-back">
+                    <a href="../blog.html" class="btn btn-outline">&larr; Back to writing</a>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="container footer-container">
+            <a class="footer-name" href="mailto:contact@lucaslinkowski.com">Lucas Linkowski</a>
+            <span class="footer-location">Based in Wales, UK</span>
+            <span class="footer-support"><a href="https://buymeacoffee.com/lucaslinkowski" target="_blank" rel="noopener noreferrer">Support me</a></span>
+            <span class="footer-copy">&copy; 2026 All rights reserved.</span>
+        </div>
+        <p class="site-disclaimer site-disclaimer--footer">Independent personal website. Views, writing, code, and research are my own and do not represent any employer.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
