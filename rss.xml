@@ -7,6 +7,14 @@
     <language>en-gb</language>
 
     <item>
+      <title>Are You Actually Using the Model You Selected?</title>
+      <link>https://lucaslinkowski.com/blog/are-you-actually-using-the-model-you-selected.html</link>
+      <description>A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain.</description>
+      <pubDate>Thu, 27 Aug 2026 12:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/are-you-actually-using-the-model-you-selected.html</guid>
+    </item>
+
+    <item>
       <title>Speak LLM: A Practical Glossary for Better Agent Outcomes</title>
       <link>https://lucaslinkowski.com/blog/speak-llm-common-language-agent-workflows.html</link>
       <description>A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path, with ready-to-paste prompts.</description>
