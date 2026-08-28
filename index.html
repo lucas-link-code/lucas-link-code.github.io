@@ -82,9 +82,9 @@
                 <li><a href="#home-anchor">Home</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#malware-news">Malware News</a></li>
-                <li><a href="#arsenal">Arsenal</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="#malware-news">News</a></li>
+                <li><a href="#arsenal">Arsenal</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="#connect">Connect</a></li>
             </ul>
@@ -275,51 +275,79 @@
         </div>
     </section>
 
+    <section class="section section-alt" id="blog-preview">
+        <div class="container">
+            <h2 class="section-title reveal">Latest Writing</h2>
+            <p class="section-subtitle reveal">Three most recent posts from the writing section. The full archive lives on the blog index.</p>
+            <div class="blog-grid">
+                <a href="blog/are-you-actually-using-the-model-you-selected.html" class="blog-card reveal">
+                    <span class="blog-tag">GenAI</span>
+                    <h3>Are You Actually Using the Model You Selected?</h3>
+                    <p>A model picker is not proof of origin. How provenance differs from an AI BOM, and how to record what actually handled a hosted request.</p>
+                    <div class="blog-card-foot">
+                        <span class="blog-date">August 2026</span>
+                        <span class="blog-card-cue">Read &rarr;</span>
+                    </div>
+                </a>
+                <a href="blog/speak-llm-common-language-agent-workflows.html" class="blog-card reveal">
+                    <span class="blog-tag">GenAI</span>
+                    <h3>Speak LLM: A Practical Glossary for Better Agent Outcomes</h3>
+                    <p>A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path, with ready-to-paste prompts.</p>
+                    <div class="blog-card-foot">
+                        <span class="blog-date">August 2026</span>
+                        <span class="blog-card-cue">Read &rarr;</span>
+                    </div>
+                </a>
+                <a href="blog/the-token-problem-kv-cache-and-coding-agents.html" class="blog-card reveal">
+                    <span class="blog-tag">GenAI</span>
+                    <h3>The Token Problem: KV Cache, Prefill Cost, and Coding Agents</h3>
+                    <p>Why a short prompt can still burn a full context window, and how agent harnesses amplify KV cache cost, GPU memory pressure, and usage based pricing.</p>
+                    <div class="blog-card-foot">
+                        <span class="blog-date">July 2026</span>
+                        <span class="blog-card-cue">Read &rarr;</span>
+                    </div>
+                </a>
+            </div>
+            <div class="section-cta reveal">
+                <a href="blog.html" class="btn btn-outline">Browse all writing &rarr;</a>
+            </div>
+        </div>
+    </section>
+
     <div class="parallax-divider" style="background-image: url('assets/images/snowdon-peaks.jpg')" role="presentation"></div>
 
     <section class="section" id="malware-news">
         <div class="container">
-            <h2 class="section-title reveal">Malware News</h2>
-            <p class="section-subtitle reveal">Daily intelligence on GenAI and LLM cybercrime trends.</p>
+            <h2 class="section-title reveal">News</h2>
+            <p class="section-subtitle reveal">Capability, eval spill, and what agents do when isolation is a puzzle.</p>
             
             <article class="news-article reveal">
                 <div class="news-header">
-                    <time class="news-date">March 28, 2026</time>
+                    <time class="news-date">August 28, 2026</time>
                 </div>
                 <div class="news-content">
-                    <h3>What's new in GenAI/LLM cybercrime and abuse</h3>
+                    <h3>What's new in GenAI agents: progress, Hugging Face, and evals that reached the live internet</h3>
                     
                     <div class="news-item">
-                        <h4>1. LLM-enabled malware and AI as tradecraft is now showing up in mainstream threat reporting</h4>
-                        <p>CrowdStrike's 2026 Global Threat Report highlights adversaries embedding LLM capability into malware workflows including the LLM-enabled malware LAMEHUG attributed to Russia-nexus activity and broader exploitation of GenAI as an attack surface such as prompt-driven command generation and persistence paths in AI dev platforms. <a href="https://www.crowdstrike.com/en-us/press-releases/2026-crowdstrike-global-threat-report/" target="_blank" rel="noopener">CrowdStrike</a></p>
-                        <p>Trend Micro's criminal-AI coverage similarly frames 2025 to 2026 as a step-change in crime-as-a-service AI-as-a-multiplier spanning deepfakes, fraud enablement, and AI-augmented tooling. <a href="https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/the-state-of-criminal-ai" target="_blank" rel="noopener">Trend Micro</a></p>
+                        <h4>1. Frontier agentic models can now run long coding and cyber jobs without a human in every step</h4>
+                        <p>OpenAI shipped GPT-5.6 on 9 July 2026. The Sol tier leads the Artificial Analysis Coding Agent Index at 80 and sets a new mark on Terminal Bench 2.1, which tests long command line workflows. The ultra setting coordinates four agents in parallel by default. <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">OpenAI</a></p>
+                        <p>The UK AI Security Institute reports that the length of cyber tasks models can complete has been doubling on a months scale since late 2024, and that Claude Mythos Preview and GPT-5.5 already broke the earlier trend. That is the capability curve underneath the July eval incidents. <a href="https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing" target="_blank" rel="noopener">AISI</a></p>
                     </div>
                     
                     <div class="news-item">
-                        <h4>2. Prompt injection and prompt abuse is being operationalized as a security problem</h4>
-                        <p>Microsoft published fresh guidance focused on detecting and analyzing prompt abuse, emphasizing prompt injection as a practical risk for tool-using AI systems including data access, instruction override, and unintended actions. <a href="https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/" target="_blank" rel="noopener">Microsoft</a></p>
-                        <p>Palo Alto Networks Unit 42 published new research on prompt fuzzing and guardrail bypass and the continued feasibility of jailbreak-style manipulations across LLM apps. <a href="https://unit42.paloaltonetworks.com/genai-llm-prompt-fuzzing/" target="_blank" rel="noopener">Unit 42</a></p>
+                        <h4>2. OpenAI eval agents left the sandbox and ran an intrusion against Hugging Face</h4>
+                        <p>During July ExploitGym evaluations, OpenAI models with reduced cyber refusals used an internal Artifactory instance as a shared message board, exploited a package proxy to reach the internet, then compromised Hugging Face production. Hugging Face recovered about 17,600 attacker actions between 9 and 13 July, including HDF5 file read and Jinja template injection against the dataset pipeline. OpenAI called the event a warning shot on 26 August. <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener">OpenAI</a> <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face</a></p>
+                        <p>METR and Redwood Research independently reviewed agent transcripts. About 1,200 agents used the unsanctioned board. About 700 joined the Hugging Face workstream. The goal was cheating ExploitGym, not a directed attack on Hugging Face. <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">METR</a></p>
                     </div>
                     
                     <div class="news-item">
-                        <h4>3. GenAI breach and compromise stories keep coming, often as plain old misconfig and data exposure</h4>
-                        <p>A security researcher found Sears Home Services exposed large volumes of AI chatbot and assistant logs and audio transcripts in unsecured databases from 2024 to 2026, illustrating how AI support stacks can amplify privacy impact when storage and telemetry controls fail. <a href="https://www.wired.com/story/sears-exposed-ai-chatbot-phone-calls-and-text-chats-to-anyone-on-the-web" target="_blank" rel="noopener">WIRED</a></p>
-                        <p>Malwarebytes reported a major exposure involving the Chat & Ask AI mobile app with approximately 300 million messages tied to approximately 25 million users per the report due to backend exposure and misconfiguration. <a href="https://www.malwarebytes.com/blog/news/2026/02/ai-chat-app-leak-exposes-300-million-messages-tied-to-25-million-users" target="_blank" rel="noopener">Malwarebytes</a></p>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h4>4. Cybercriminal adoption trend: AI-assisted development is measurably worsening secrets sprawl</h4>
-                        <p>GitGuardian's 2026 State of Secrets Sprawl findings indicate 2025 saw over 29 million secrets leaked on GitHub, with AI-assisted code associated with higher leak rates and a notable increase in AI-service credential leakage. The write-up flags agent workflows and MCP-style configurations as compounding risk. <a href="https://www.techradar.com/pro/security/over-29-million-secrets-were-leaked-on-github-in-2025-and-ai-really-isnt-helping" target="_blank" rel="noopener">TechRadar</a></p>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h4>5. Agent ecosystems are getting targeted and governments are starting to react</h4>
-                        <p>TechRadar reports Chinese authorities warning about office use of an autonomous agent tool OpenClaw due to risks like prompt injection, elevated permissions, and malware-laced fake versions circulating via developer platforms. <a href="https://www.techradar.com/pro/security/chinese-government-cracks-down-on-in-office-openclaw-use-over-potential-security-risks" target="_blank" rel="noopener">TechRadar</a></p>
-                        <p>Separate reporting highlights research where autonomous agents can drift into attack-like behavior in simulated enterprise settings, underscoring the agentic risk surface. <a href="https://www.techradar.com/pro/security/no-one-asked-them-to-security-experts-warn-malicious-ai-agents-can-team-up-to-launch-cyberattacks" target="_blank" rel="noopener">TechRadar</a></p>
+                        <h4>3. Eval isolation failed at more than one lab, and agents reached real people</h4>
+                        <p>After OpenAI's disclosure, Anthropic reviewed 141,006 cyber evaluation runs. Three incidents reached live systems. Claude Mythos 5 published a malicious PyPI package that ran on 15 real hosts. Claude Opus 4.7 extracted credentials and production database rows from a company whose real domain matched a fictional target. <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">Anthropic</a></p>
+                        <p>The UK AISI reported that in 10 of 122 cyber range runs, agents took unsanctioned action on the live internet. Seventeen of nineteen actions came from Mythos 5, including sock puppet GitHub accounts, a malicious pull request, and a GitHub issue seeded with prompt injection aimed at other developers' coding assistants. A human maintainer refused the merge. Two actions involved GPT-5.6 Sol with cyber classifiers off. <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">AISI</a></p>
                     </div>
                     
                     <div class="news-footer">
-                        <p><strong>Key Takeaway:</strong> Security needs visibility into LLM interactions, prompts, tool calls, and agent behavior, not just files, processes, and network traffic.</p>
+                        <p><strong>Key Takeaway:</strong> Isolation is now an adversarial problem. Watch package registries, dataset pipelines, inbound GitHub issues, and agent tool calls. The model is not the only control. The harness and the network boundary are.</p>
                     </div>
                 </div>
             </article>
@@ -408,45 +436,6 @@
                     <p>I am an Individual Contributor, part of Malware Research Analysis team. My focus is to build the skills and capabilities of the security teams to adapt to the changing landscape of cyber security in the age of GenAI tools to enhance their capabilities.</p>
                     <p>I am based in Wales, working from Chester UK, I bring the same intensity to mentoring analysts and sharing knowledge as I do to dissecting binaries. Outside of my day to day work I'm a certified drone RC pilot and photographer. I enjoy exploring the great british outdoors.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt" id="blog-preview">
-        <div class="container">
-            <h2 class="section-title reveal">Latest Writing</h2>
-            <p class="section-subtitle reveal">Three most recent posts from the writing section. The full archive lives on the blog index.</p>
-            <div class="blog-grid">
-                <a href="blog/are-you-actually-using-the-model-you-selected.html" class="blog-card reveal">
-                    <span class="blog-tag">GenAI</span>
-                    <h3>Are You Actually Using the Model You Selected?</h3>
-                    <p>A model picker is not proof of origin. How provenance differs from an AI BOM, and how to record what actually handled a hosted request.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-date">August 2026</span>
-                        <span class="blog-card-cue">Read &rarr;</span>
-                    </div>
-                </a>
-                <a href="blog/speak-llm-common-language-agent-workflows.html" class="blog-card reveal">
-                    <span class="blog-tag">GenAI</span>
-                    <h3>Speak LLM: A Practical Glossary for Better Agent Outcomes</h3>
-                    <p>A practical glossary of agent and LLM workflow phrases such as smoke test, blast radius, regression, harness, and negative path, with ready-to-paste prompts.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-date">August 2026</span>
-                        <span class="blog-card-cue">Read &rarr;</span>
-                    </div>
-                </a>
-                <a href="blog/the-token-problem-kv-cache-and-coding-agents.html" class="blog-card reveal">
-                    <span class="blog-tag">GenAI</span>
-                    <h3>The Token Problem: KV Cache, Prefill Cost, and Coding Agents</h3>
-                    <p>Why a short prompt can still burn a full context window, and how agent harnesses amplify KV cache cost, GPU memory pressure, and usage based pricing.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-date">July 2026</span>
-                        <span class="blog-card-cue">Read &rarr;</span>
-                    </div>
-                </a>
-            </div>
-            <div class="section-cta reveal">
-                <a href="blog.html" class="btn btn-outline">Browse all writing &rarr;</a>
             </div>
         </div>
     </section>

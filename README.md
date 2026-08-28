@@ -17,7 +17,7 @@ Use this README as default context when editing the site in a new chat. The site
 
 | Path | Role |
 |------|------|
-| `index.html` | Home: hero, about, expertise, projects, malware news, arsenal, thought leadership, blog preview, gallery preview, connect |
+| `index.html` | Home: hero, about, expertise, projects, latest writing, news, arsenal, thought leadership, gallery preview, connect |
 | `blog.html` | Writing hub with Published and In Pipeline sections, category filters, RSS link, post count |
 | `blog/*.html` | Individual posts; paths to CSS are `../css/style.css` |
 | `blog/post-template.html` | Clone for new posts; update placeholders then wire prev/next nav |
@@ -53,7 +53,7 @@ All article styling is in `css/style.css`. Do not add inline `<style>` blocks to
 
 ### Homepage preview (index.html)
 
-The Latest Writing section in `index.html` shows the three most recent published posts in reverse-chronological order using `blog-card-foot` and `blog-card-cue`. It links to `blog.html` via a Browse all writing CTA. Update this section manually when adding a new post if it belongs in the top three.
+The Latest Writing section in `index.html` sits after Open Source Projects and before News. It shows the three most recent published posts in reverse-chronological order using `blog-card-foot` and `blog-card-cue`. It links to `blog.html` via a Browse all writing CTA. Update this section manually when adding a new post if it belongs in the top three.
 
 ## Blog workflow — adding a new post
 
