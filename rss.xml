@@ -81,7 +81,7 @@
     <item>
       <title>Building an MCP Server for Malware Traffic Analysis</title>
       <link>https://lucaslinkowski.com/blog/mcp-server-malware-traffic-analysis.html</link>
-      <description>How I built a natural language interface connecting Fiddler traffic capture to Gemini LLM using the Model Context Protocol.</description>
+      <description>How I connected Fiddler traffic capture to an LLM with MCP, then moved execution control into a Python harness.</description>
       <pubDate>Fri, 21 Mar 2026 09:00:00 GMT</pubDate>
       <guid>https://lucaslinkowski.com/blog/mcp-server-malware-traffic-analysis.html</guid>
     </item>
