@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lucaslinkowski.com/</loc>
-        <lastmod>2026-08-27</lastmod>
+        <lastmod>2026-09-05</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/blog.html</loc>
-        <lastmod>2026-08-27</lastmod>
+        <lastmod>2026-09-05</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
@@ -19,6 +19,11 @@
         <loc>https://lucaslinkowski.com/support.html</loc>
         <lastmod>2026-03-30</lastmod>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lucaslinkowski.com/blog/why-attackers-dont-put-ai-in-malware.html</loc>
+        <lastmod>2026-09-05</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://lucaslinkowski.com/blog/are-you-actually-using-the-model-you-selected.html</loc>

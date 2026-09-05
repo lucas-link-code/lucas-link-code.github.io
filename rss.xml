@@ -7,6 +7,14 @@
     <language>en-gb</language>
 
     <item>
+      <title>Why Attackers Don't put AI in Malware</title>
+      <link>https://lucaslinkowski.com/blog/why-attackers-dont-put-ai-in-malware.html</link>
+      <description>The AI is not in the malware because the payload is the worst place to put it. It is in development, social engineering and vulnerability research.</description>
+      <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/why-attackers-dont-put-ai-in-malware.html</guid>
+    </item>
+
+    <item>
       <title>Are You Actually Using the Model You Selected?</title>
       <link>https://lucaslinkowski.com/blog/are-you-actually-using-the-model-you-selected.html</link>
       <description>A model picker or an API response that repeats the model name is not proof of which model handled the request. For hosted models you cannot hash production weights, so the practical approach is a transaction evidence chain.</description>
