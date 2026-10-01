@@ -7,6 +7,14 @@
     <language>en-gb</language>
 
     <item>
+      <title>Inside ChatGPT Work: The Machine Underneath the Chat</title>
+      <link>https://lucaslinkowski.com/blog/inside-chatgpt-work-the-machine-underneath-the-chat.html</link>
+      <description>Underneath it is a Linux filesystem with a shell, a C compiler, and a network connection for its commands that is controlled separately from web search.</description>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/inside-chatgpt-work-the-machine-underneath-the-chat.html</guid>
+    </item>
+
+    <item>
       <title>Why Attackers Don't put AI in Malware</title>
       <link>https://lucaslinkowski.com/blog/why-attackers-dont-put-ai-in-malware.html</link>
       <description>The AI is not in the malware because the payload is the worst place to put it. It is in development, social engineering and vulnerability research.</description>
