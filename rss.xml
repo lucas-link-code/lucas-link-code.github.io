@@ -7,6 +7,14 @@
     <language>en-gb</language>
 
     <item>
+      <title>Getting Better AI Results with an Agent Harness</title>
+      <link>https://lucaslinkowski.com/blog/getting-better-ai-results-with-an-agent-harness.html</link>
+      <description>An agent harness helps AI produce better results by giving it clear instructions, controlling tool access and checking the work.</description>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 GMT</pubDate>
+      <guid>https://lucaslinkowski.com/blog/getting-better-ai-results-with-an-agent-harness.html</guid>
+    </item>
+
+    <item>
       <title>Inside ChatGPT Work: The Machine Underneath the Chat</title>
       <link>https://lucaslinkowski.com/blog/inside-chatgpt-work-the-machine-underneath-the-chat.html</link>
       <description>Underneath it is a Linux filesystem with a shell, a C compiler, and a network connection for its commands that is controlled separately from web search.</description>
